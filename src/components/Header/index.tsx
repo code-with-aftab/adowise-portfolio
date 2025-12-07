@@ -1,0 +1,174 @@
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import ThemeToggler from "./ThemeToggler";
+import menuData from "./menuData";
+import { useTheme } from "next-themes";
+
+const Header = () => {
+  const [navbarOpen, setNavbarOpen] = useState(false);
+  const [logoClass, setLogoClass] = useState("");
+  const { theme } = useTheme();
+  const pathname = usePathname();
+
+  const navbarToggleHandler = () => setNavbarOpen(!navbarOpen);
+
+  const [sticky, setSticky] = useState(false);
+  const handleStickyNavbar = () => {
+    if (window.scrollY >= 80) setSticky(true);
+    else setSticky(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleStickyNavbar);
+  }, []);
+
+  const [openIndex, setOpenIndex] = useState(-1);
+  const handleSubmenu = (index: number) =>
+    setOpenIndex(openIndex === index ? -1 : index);
+
+  useEffect(() => {
+    setLogoClass(theme === "dark" ? "logo-white" : "");
+  }, [theme]);
+
+  return (
+    <header
+      className={`header top-0 left-0 z-[9999] flex w-full items-center ${
+        sticky
+          ? "fixed shadow-sticky bg-white/10 dark:bg-black/10 backdrop-blur-lg transition-all"
+          : "absolute bg-transparent"
+      }`}
+    >
+      <div className="container">
+        <div className="relative -mx-4 flex items-center justify-between">
+
+          {/* LOGO */}
+          <div className="w-60 max-w-full px-4">
+            <Link
+              href="/"
+              className={`header-logo flex w-full items-center gap-2 text-3xl font-bold ${
+                sticky ? "py-5 lg:py-2" : "py-8"
+              } text-primary dark:text-white`}
+            >
+              <Image
+                src="/adowise-logo.png"
+                alt="Adowise Logo"
+                width={40}
+                height={40}
+                className={`logo ${logoClass}`}
+              />
+            </Link>
+          </div>
+
+          {/* RIGHT SIDE ICONS ONLY ON MOBILE */}
+          <div className="flex items-center gap-3 lg:hidden absolute right-4 top-1/2 -translate-y-1/2 z-[9999]">
+            <ThemeToggler />
+
+            <button
+              onClick={navbarToggleHandler}
+              aria-label="Mobile Menu"
+              className="px-3 py-[6px] rounded-lg"
+            >
+              <span
+                className={`block h-0.5 w-6 bg-black dark:bg-white transition-all ${
+                  navbarOpen ? "rotate-45 translate-y-1" : ""
+                }`}
+              />
+              <span
+                className={`block h-0.5 w-6 bg-black dark:bg-white my-1 transition-all ${
+                  navbarOpen ? "opacity-0" : ""
+                }`}
+              />
+              <span
+                className={`block h-0.5 w-6 bg-black dark:bg-white transition-all ${
+                  navbarOpen ? "-rotate-45 -translate-y-1" : ""
+                }`}
+              />
+            </button>
+          </div>
+
+          {/* NAVIGATION + DESKTOP ICONS (unchanged) */}
+          <div className="flex w-full items-center justify-between px-4">
+
+            {/* NAV MENU */}
+            <nav
+              className={`navbar  absolute right-0 z-30 w-[250px] rounded border px-6 py-4 duration-300 bg-white dark:border-white/10
+              lg:static lg:w-auto lg:bg-transparent lg:border-none lg:p-0 lg:opacity-100 lg:visible
+              ${
+                navbarOpen
+                  ? "top-full opacity-100 visible"
+                  : "top-[120%] opacity-0 invisible"
+              }`}
+            >
+              <ul className="block lg:flex lg:space-x-12">
+                {menuData.map((menuItem, index) => (
+                  <li key={index} className="group relative">
+                    {menuItem.path ? (
+                      <Link
+                        href={menuItem.path}
+                        className={`flex py-2 lg:py-6 text-base ${
+                          pathname === menuItem.path
+                            ? "text-primary dark:text-white"
+                            : "text-dark dark:text-white/70 hover:text-primary dark:hover:text-white"
+                        }`}
+                      >
+                        {menuItem.title}
+                      </Link>
+                    ) : (
+                      <>
+                        <p
+                          onClick={() => handleSubmenu(index)}
+                          className="cursor-pointer flex items-center justify-between py-2 lg:py-6 text-base text-dark dark:text-white/70 hover:text-primary dark:hover:text-white"
+                        >
+                          {menuItem.title}
+                          <span className="pl-3">▼</span>
+                        </p>
+
+                        <div
+                          className={`submenu bg-white dark:bg-dark rounded-sm shadow-lg lg:absolute lg:left-0 lg:top-full lg:w-[250px] p-4 transition-all
+                          ${
+                            openIndex === index
+                              ? "block"
+                              : "hidden lg:opacity-0 lg:invisible lg:group-hover:visible lg:group-hover:opacity-100"
+                          }`}
+                        >
+                          {menuItem.submenu?.map((sub, i) => (
+                            <Link
+                              key={i}
+                              href={sub.path}
+                              className="block py-2.5 px-3 text-sm text-dark dark:text-white/70 hover:text-primary"
+                            >
+                              {sub.title}
+                            </Link>
+                          ))}
+                        </div>
+                      </>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            {/* DESKTOP RIGHT SIDE ICONS (unchanged) */}
+            <div className="hidden lg:flex items-center gap-4">
+
+              <Link
+                href="https://calendly.com/infomohdaftab/30min"
+                className="text-dark dark:text-white hover:opacity-70 px-4 py-2"
+              >
+                Book Demo
+              </Link>
+
+              <ThemeToggler />
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
