@@ -32,7 +32,6 @@ const foundersData: Founder[] = [
 const FounderCard = ({ founder }: { founder: Founder }) => (
   <div className="w-full px-4 md:w-1/2">
     <div className="mb-10 rounded-xl bg-white p-6 text-center shadow-lg dark:bg-gray-800">
-
       {/* MOBILE FIX — CENTER IMAGE */}
       <div className="relative mx-auto mb-5 h-32 w-32">
         <Image
@@ -48,9 +47,7 @@ const FounderCard = ({ founder }: { founder: Founder }) => (
         {founder.name}
       </h4>
 
-      <p className="mb-3 text-body-color dark:text-gray-300">
-        {founder.role}
-      </p>
+      <p className="text-body-color mb-3 dark:text-gray-300">{founder.role}</p>
 
       <p className="text-body-color mb-3 text-sm dark:text-gray-400">
         {founder.bio}
@@ -85,7 +82,7 @@ const FounderCard = ({ founder }: { founder: Founder }) => (
 
 const Founders = () => {
   return (
-    <section className="py-16 md:py-20 lg:py-28 bg-gray-light dark:bg-gray-900">
+    <section className="bg-gray-light py-16 md:py-20 lg:py-28 dark:bg-gray-900">
       <div className="container">
         <h2 className="mb-12 text-center text-3xl font-bold text-black dark:text-white">
           Meet Our Founders

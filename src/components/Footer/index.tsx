@@ -43,8 +43,8 @@ const Footer = () => {
         <div>
           <h3 className="text-xl font-semibold text-white mb-4">Contact</h3>
           <ul className="space-y-2">
-            <li>Email: <span className="text-white">info@adowise.com</span></li>
-            <li>Phone: <span className="text-white">+91 9876543210</span></li>
+            <li>Email: <span className="text-white">adowise@gmail.com</span></li>
+            <li>Phone: <span className="text-white">+91 9882835865</span></li>
             <li>Location: <span className="text-white">India</span></li>
           </ul>
         </div>
