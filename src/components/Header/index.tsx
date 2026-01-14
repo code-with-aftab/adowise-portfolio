@@ -42,7 +42,7 @@ const Header = () => {
       }`}
     >
       <div className="container">
-        <div className="relative -mx-4 flex items-center justify-between">
+        <div className="relative -mx-6 flex items-center justify-between">
 
           {/* LOGO */}
           <div className="w-60 max-w-full px-4">
@@ -94,7 +94,7 @@ const Header = () => {
 
             {/* NAV MENU */}
             <nav
-              className={`navbar  absolute right-0 z-30 w-[250px] rounded border px-6 py-4 duration-300 bg-white/10  
+              className={`navbar  absolute right-0 z-30 w-[250px] rounded border px-6 py-4 duration-300 bg-white/10 lg:backdrop-blur-none    backdrop-blur-xl  dark:border-white/10
               lg:static lg:w-auto lg:bg-transparent lg:border-none lg:p-0 lg:opacity-100 lg:visible
               ${
                 navbarOpen
