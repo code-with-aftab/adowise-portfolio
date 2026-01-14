@@ -19,18 +19,31 @@ const Hero = () => {
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
-              <div className="mx-auto py-4 max-w-[800px] text-center">
-                <motion.h1 
-                  initial={{ filter: "blur(10px)", opacity: 0 }}
-                  animate={isVisible ? { 
-                    filter: "blur(0px)", 
-                    opacity: 1 
-                  } : {}}
-                  transition={{ duration: 1, ease: "easeOut" }}
-                  className="mb-5 text-3xl leading-tight font-bold text-black sm:text-4xl sm:leading-tight md:text-6xl md:leading-tight dark:text-white"
-                >
-                  Transforming Ideas into Powerful Digital Products
-                </motion.h1>
+<div className="mx-auto py-4 max-w-[800px] text-center relative">
+  {/* two glows left & right */}
+  <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-between">
+    {/* LEFT glow (blue) */}
+    <div className="relative -translate-x-40 -translate-y-19">
+      <div className="w-64 h-64 rounded-full bg-[radial-gradient(circle_at_30%_30%,#4A6CF7,transparent_60%)] blur-3xl opacity-70" />
+      <div className="absolute inset-6 rounded-full border border-[#9bb4ff]/70 blur-sm opacity-80" />
+    </div>
+
+    {/* RIGHT glow (purple/pink) */}
+    <div className="relative translate-x-40 translate-y-40">
+      <div className="w-64 h-64 rounded-full bg-[radial-gradient(circle_at_70%_30%,#EC4899,transparent_60%)] blur-3xl opacity-70" />
+      <div className="absolute inset-6 rounded-full border border-[#F0ABFC]/70 blur-sm opacity-80" />
+    </div>
+  </div>
+
+  {/* your heading stays the same */}
+  <motion.h1
+    initial={{ filter: "blur(10px)", opacity: 0 }}
+    animate={isVisible ? { filter: "blur(0px)", opacity: 1 } : {}}
+    transition={{ duration: 1, ease: "easeOut" }}
+    className="mb-5 text-3xl leading-tight font-bold text-black sm:text-4xl sm:leading-tight md:text-6xl md:leading-tight dark:text-white"
+  >
+    Transforming Ideas into Powerful Digital Products
+  </motion.h1>
                 <motion.p 
                   initial={{ filter: "blur(10px)", opacity: 0 }}
                   animate={isVisible ? { 
