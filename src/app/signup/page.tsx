@@ -3,10 +3,41 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Sign Up Page | Free Next.js Template for Startup and SaaS",
-  description: "This is Sign Up Page for Startup Nextjs Template",
-  // other metadata
+  title: "Create Your Adowise Account | Free Client Signup",
+  description:
+    "Sign up for a free Adowise account to manage your website projects, track progress and collaborate with our web development team serving Chandigarh, Punjab and Himachal Pradesh.",
+  keywords: [
+    "Adowise signup",
+    "create web development account",
+    "client portal registration",
+    "Chandigarh web agency signup",
+    "Himachal Pradesh web client signup",
+    "Next.js SaaS onboarding"
+  ],
+  openGraph: {
+    title: "Sign Up | Adowise Web Development Client Portal",
+    description:
+      "Register for a free Adowise client account to get started with your website, landing page or SaaS project.",
+    images: ["/og/auth-signup-adwise.jpg"],
+    url: "https://adowise.in/signup",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Create Your Account | Adowise Web Development",
+    description:
+      "Join Adowise to manage your web development projects and communicate with our team.",
+    images: ["/twitter/auth-signup-adwise.jpg"],
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://adowise.in/signup",
+  },
 };
+
 
 const SignupPage = () => {
   return (

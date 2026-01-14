@@ -3,9 +3,39 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Sign In Page | Free Next.js Template for Startup and SaaS",
-  description: "This is Sign In Page for Startup Nextjs Template",
-  // other metadata
+  title: "Sign In to Adowise Dashboard | Client & Admin Login",
+  description:
+    "Securely sign in to your Adowise account to manage websites, projects and analytics. Client and admin login for businesses in Chandigarh, Punjab and Himachal Pradesh.",
+  keywords: [
+    "Adowise login",
+    "web development client dashboard",
+    "agency portal sign in",
+    "Chandigarh web agency login",
+    "Himachal Pradesh web client area",
+    "Next.js SaaS dashboard authentication"
+  ],
+  openGraph: {
+    title: "Adowise Login - Access Your Web Development Dashboard",
+    description:
+      "Log in to your Adowise account to track your website project, invoices and performance analytics for your business.",
+    images: ["/og/auth-login-adwise.jpg"],
+    url: "https://adowise.in/signin",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sign In | Adowise Web Development Dashboard",
+    description:
+      "Access your Adowise client or admin account to manage web projects and updates.",
+    images: ["/twitter/auth-login-adwise.jpg"],
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://adowise.in/signin",
+  },
 };
 
 const SigninPage = () => {

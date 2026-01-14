@@ -3,10 +3,34 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Error Page | Free Next.js Template for Startup and SaaS",
-  description: "This is Error Page for Startup Nextjs Template",
-  // other metadata
+  title: "404 Page Not Found - Adowise Web Development Agency",
+  description:
+    "This page could not be found on Adowise.in. Return to the homepage to explore Next.js React web development services for businesses in Chandigarh, Punjab and Himachal Pradesh.",
+  keywords: [
+    "404 page Adowise",
+    "page not found web agency",
+    "web development agency Chandigarh",
+    "Himachal Pradesh web developer error",
+    "Next.js React agency North India"
+  ],
+  openGraph: {
+    title: "404 - Page Not Found | Adowise Web Development Agency",
+    description:
+      "The page you are looking for does not exist. Go back to the Adowise homepage to view web development services and case studies.",
+    images: ["/og/404-adwise-north-india.jpg"],
+    url: "https://adowise.in/404",
+    type: "website",
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://adowise.in/",
+  },
 };
+
+
 
 const ErrorPage = () => {
   return (

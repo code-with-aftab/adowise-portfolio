@@ -7,10 +7,41 @@ import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog Details Page | Free Next.js Template for Startup and SaaS",
-  description: "This is Blog Details Page for Startup Nextjs Template",
-  // other metadata
+  title: "Stock Photos & Digital Assets for Free | Web Designers Blog Chandigarh & Himachal",
+  description:
+    "Discover 10 amazing websites to download free stock photos and digital assets. Perfect for web designers, Next.js React developers, and agencies in Chandigarh, Punjab, and Himachal Pradesh.",
+  keywords: [
+    "free stock photos for websites",
+    "download digital assets free",
+    "web design resources Chandigarh",
+    "Next.js developer Solan blog",
+    "Himachal Pradesh web design tips",
+    "design assets for React developers"
+  ],
+  openGraph: {
+    title:
+      "10 Amazing Sites to Download Free Stock Photos & Digital Assets | Adowise Blog",
+    description:
+      "Handpicked list of the best free stock photo and digital asset websites for web designers and developers in Chandigarh, Punjab, and Himachal Pradesh.",
+    url: "https://adowise.in/blog/10-amazing-stock-photo-sites",
+    type: "article",
+    images: ["/og/blog-stock-photos-free.jpg"]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "10 Free Stock Photo & Digital Asset Sites for Web Designers | Adowise Blog",
+    description:
+      "Level up your Next.js and React projects with these free stock photo and asset websites.",
+    images: ["/twitter/blog-stock-photos-free.jpg"]
+  },
+  robots: {
+    index: true,
+    follow: true
+  }
 };
+
+
 
 const BlogSidebarPage = () => {
   return (

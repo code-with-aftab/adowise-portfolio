@@ -3,36 +3,47 @@ import blogData from "@/components/Blog/blogData";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import { Metadata } from "next";
 
-export async function generateMetadata({ searchParams }: { searchParams: { page?: string } }): Promise<Metadata> {
-  const page = searchParams?.page ? ` Page ${searchParams.page}` : '';
-  
+export async function generateMetadata({
+  searchParams,
+}: { searchParams: { page?: string } }): Promise<Metadata> {
+  const page = searchParams?.page ? ` - Page ${searchParams.page}` : "";
+
   return {
-    title: `Web Development Blog${page} | Adowise - Himachal Pradesh Web Agency`,
-    description: `Himachal Pradesh web development tutorials, Next.js React tips from HP's top agency${page}. Free website consultation for startups & businesses.`,
-    keywords: "web development Himachal Pradesh, Next.js tutorial HP, React agency Himachal, website development Solan, web agency HP",
-    
+    title: `Web Development Blog${page} | Next.js & React Tutorials for Chandigarh, Punjab & Himachal`,
+    description: `Read web development blogs${page} on Next.js, React, Tailwind CSS and SEO for businesses in Chandigarh, Tricity, Punjab and Himachal Pradesh. Learn how to get a high-converting website in 7 days.`,
+    keywords: [
+      "web development blog Chandigarh",
+      "Next.js tutorial Himachal Pradesh",
+      "React tips for startups",
+      "Tailwind CSS blog India",
+      "website development Solan HP",
+      "web design tips for Punjab businesses"
+    ],
     openGraph: {
-      title: `Adowise Blog${page} - HP Web Development Experts`,
-      description: "Next.js React tutorials & case studies from Himachal Pradesh's fastest web agency.",
-      images: ["/og-blog-hp.jpg"],
-      url: `https://adowise.in/blog${searchParams?.page ? `?page=${searchParams.page}` : ''}`,
+      title: `Adowise Web Dev Blog${page} - Next.js & React Insights for North India`,
+      description:
+        "Practical web development guides, case studies and tutorials for businesses in Chandigarh, Punjab and Himachal Pradesh. Built by a Next.js React agency.",
+      images: ["/og/blog-grid-adwise.jpg"],
+      url: `https://adowise.in/blog${searchParams?.page ? `?page=${searchParams.page}` : ""}`,
       type: "website",
     },
-    
     twitter: {
       card: "summary_large_image",
-      title: `Adowise Web Dev Blog${page}`,
-      description: "HP web agency के latest articles on Next.js, React, Tailwind.",
-      images: ["/twitter-blog-hp.jpg"],
+      title: `Adowise Blog${page} - Web Development & Next.js Tutorials`,
+      description:
+        "North India focused web development blog covering Next.js, React, Tailwind CSS and SEO for local businesses.",
+      images: ["/twitter/blog-grid-adwise.jpg"],
     },
-    
     alternates: {
-      canonical: `https://adowise.in/blog${searchParams?.page ? `?page=${searchParams.page}` : ''}`,
+      canonical: `https://adowise.in/blog${searchParams?.page ? `?page=${searchParams.page}` : ""}`,
     },
-    
-    robots: "index, follow",
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
+
 
 const Blog = () => {
   return (
