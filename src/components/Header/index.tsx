@@ -158,7 +158,7 @@ const Header = () => {
                 href="https://calendly.com/infomohdaftab/30min"
                 className=""
               >
-                              <ShinyButton children={"Book a Demo"}></ShinyButton>
+                              <ShinyButton children={"Book a free Demo"}></ShinyButton>
 
               </Link>
 
