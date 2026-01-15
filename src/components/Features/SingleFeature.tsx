@@ -3,17 +3,31 @@ import { Feature } from "@/types/feature";
 const SingleFeature = ({ feature }: { feature: Feature }) => {
   const { icon, title, paragraph } = feature;
   return (
-    <div className="w-full">
-      <div className="wow fadeInUp" data-wow-delay=".15s">
-        <div className="bg-primary/10 text-primary mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-md">
+    <div className="w-full max-w-[370px]">
+      <div 
+        className="wow fadeInUp group relative overflow-hidden rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 p-8 hover:bg-white/20 hover:border-white/30 hover:-translate-y-2 transition-all duration-500" 
+        data-wow-delay=".15s"
+      >
+        {/* Gradient overlay for premium effect */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+        
+        {/* Icon with glass effect - shadow removed */}
+        <div className="relative mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-xl bg-primary/20 backdrop-blur-sm border border-primary/30 text-primary group-hover:scale-110 transition-all duration-300">
           {icon}
         </div>
-        <h3 className="mb-5 text-xl font-bold text-black sm:text-2xl lg:text-xl xl:text-2xl dark:text-white">
+        
+        {/* Title */}
+        <h3 className="relative mb-5 text-xl font-bold text-black sm:text-2xl lg:text-xl xl:text-2xl dark:text-white group-hover:text-primary transition-colors duration-300">
           {title}
         </h3>
-        <p className="text-body-color pr-[10px] text-base leading-relaxed font-medium">
+        
+        {/* Paragraph */}
+        <p className="relative text-body-color pr-[10px] text-base leading-relaxed font-medium">
           {paragraph}
         </p>
+
+        {/* Bottom accent line */}
+        <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-primary to-transparent group-hover:w-full transition-all duration-700"></div>
       </div>
     </div>
   );

@@ -9,11 +9,11 @@ const Features = () => {
         <div className="container">
           <SectionTitle
             title="Powerful Features That Grow Your Business"
-            paragraph="Adowise delivers high-performance digital solutions built with Next.js. From fast business websites to full SaaS platforms, our features are designed to provide speed, scalability, and modern user experiences."
+            paragraph=""
             center
           />
 
-          <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3 place-items-center">
             {featuresData.map((feature) => (
               <SingleFeature key={feature.id} feature={feature} />
             ))}

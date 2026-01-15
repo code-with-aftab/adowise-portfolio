@@ -42,10 +42,10 @@ const Header = () => {
       }`}
     >
       <div className="container">
-        <div className="relative -mx-6 flex items-center justify-between">
+        <div className="relative  flex items-center justify-between">
 
           {/* LOGO */}
-          <div className="w-60 max-w-full px-4">
+          <div className="w-60 max-w-full px-2">
             <Link
               href="/"
               className={`header-logo flex w-full items-center gap-2 text-3xl font-bold ${
@@ -63,7 +63,7 @@ const Header = () => {
           </div>
 
           {/* RIGHT SIDE ICONS ONLY ON MOBILE */}
-          <div className="flex items-center gap-3 lg:hidden absolute right-4 top-1/2 -translate-y-1/2 z-[9999]">
+          <div className="flex items-center gap-3 lg:hidden absolute right-0 top-1/2 -translate-y-1/2 z-[9999]">
             <ThemeToggler />
 
             <button

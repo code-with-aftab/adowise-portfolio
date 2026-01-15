@@ -69,8 +69,8 @@ export default function Home() {
       <AboutSectionTwo />
       <Testimonials />
       <Founders />
-      <Blog />
       <Contact />
+      <Blog />
 
       {/* WhatsApp Floating Button */}
     {/* WhatsApp Floating Button */}

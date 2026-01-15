@@ -30,8 +30,8 @@ const Hero = () => {
 
     {/* RIGHT glow (purple/pink) */}
     <div className="relative translate-x-40 translate-y-40">
-      <div className="w-64 h-64 rounded-full bg-[radial-gradient(circle_at_70%_30%,#EC4899,transparent_60%)] blur-3xl opacity-70" />
-      <div className="absolute inset-6 rounded-full border border-[#F0ABFC]/70 blur-sm opacity-80" />
+      <div className="w-64 h-64 rounded-full bg-[radial-gradient(circle_at_30%_30%,#4A6CF7,transparent_60%)] blur-3xl opacity-70" />
+      <div className="absolute inset-6 rounded-full border border-[#9bb4ff]/70 blur-sm opacity-80" />
     </div>
   </div>
 
