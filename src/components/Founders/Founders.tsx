@@ -33,7 +33,7 @@ const foundersData: Founder[] = [
     bio: "Aftab is a tech enthusiast and full-stack developer. He leads the product and engineering teams ensuring top-notch quality and innovation.",
     social: {
       linkedin: "https://linkedin.com/in/aftab",
-      twitter: "https://twitter.com/aftab",
+      twitter: "https://x.com/aftabkh79957721",
     },
   },
 ];

@@ -3,11 +3,20 @@ import { Feature } from "@/types/feature";
 const SingleFeature = ({ feature }: { feature: Feature }) => {
   const { icon, title, paragraph } = feature;
   return (
-    <div className="w-full max-w-[370px]">
-      <div 
-        className="wow fadeInUp group relative overflow-hidden rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 p-8 hover:bg-white/20 hover:border-white/30 hover:-translate-y-2 transition-all duration-500" 
-        data-wow-delay=".15s"
-      >
+    <div className="w-full  md:max-w-[370px]">
+   <div 
+  className="
+    wow fadeInUp group relative overflow-hidden rounded-2xl 
+    bg-gray-200  dark:bg-gray-900/70 
+    backdrop-blur-xl 
+    border border-white/20 dark:border-white/30 
+    p-8 hover:bg-gray/20 dark:hover:bg-gray-700/70 
+    hover:border-white/30 dark:hover:border-white/50 
+    hover:-translate-y-2 transition-all duration-500
+  " 
+  data-wow-delay=".15s"
+>
+
         {/* Gradient overlay for premium effect */}
         <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
         

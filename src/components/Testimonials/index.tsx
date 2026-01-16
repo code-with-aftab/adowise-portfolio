@@ -99,7 +99,7 @@ const Testimonials = () => {
                       />
                       <div className="text-yellow-400 text-2xl select-none">★★★★★</div>
                     </div>
-                    <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6 italic flex-1 select-none">
+                    <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-6 italic flex-1 select-none">
                       "{testimonial.content}"
                     </p>
                     <div className="select-none">
