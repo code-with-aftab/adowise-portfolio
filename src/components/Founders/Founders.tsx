@@ -85,7 +85,7 @@ const FounderCard = ({ founder }: { founder: Founder }) => (
               rel="noopener noreferrer"
               className="block w-full"
             >
-              <ShinyButton className="w-60">
+              <ShinyButton className="w-full justify-center">
                View Portfolio
               </ShinyButton>
             </a>
