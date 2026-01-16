@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaLinkedin, FaTwitter, FaExternalLinkAlt } from "react-icons/fa";
+import { ShinyButton } from "../ui/shiny-button";
 
 type Founder = {
   id: number;
@@ -7,6 +8,7 @@ type Founder = {
   role: string;
   image: string;
   bio: string;
+  portfolio?: string;
   social?: {
     linkedin?: string;
     twitter?: string;
@@ -20,6 +22,7 @@ const foundersData: Founder[] = [
     role: "Founder & CEO",
     image: "/images/altaf.jpg",
     bio: "Altaf is a visionary leader with over 6 years of experience in SaaS and web technologies. He focuses on building scalable and user-friendly platforms.",
+    portfolio: "https://altaf.adowise.com", // Add portfolio URL
     social: {
       linkedin: "https://linkedin.com/in/reachmohdaltaf",
       twitter: "https://twitter.com/reachmohdaltaf",
@@ -31,6 +34,7 @@ const foundersData: Founder[] = [
     role: "Co-founder & CTO",
     image: "/images/aftab.jpg",
     bio: "Aftab is a tech enthusiast and full-stack developer. He leads the product and engineering teams ensuring top-notch quality and innovation.",
+    portfolio: "https://aftab.adowise.com", // Add portfolio URL
     social: {
       linkedin: "https://linkedin.com/in/aftab",
       twitter: "https://x.com/aftabkh79957721",
@@ -61,7 +65,7 @@ const FounderCard = ({ founder }: { founder: Founder }) => (
 
         {/* Content */}
         <div className="relative">
-          <h4 className="mb-2  md:text-2xl text-xl font-bold text-gray-900 dark:text-white">
+          <h4 className="mb-2 text-xl font-bold text-gray-900 dark:text-white md:text-2xl">
             {founder.name}
           </h4>
           
@@ -73,8 +77,22 @@ const FounderCard = ({ founder }: { founder: Founder }) => (
             {founder.bio}
           </p>
 
+          {/* Portfolio Button */}
+          {founder.portfolio && (
+            <a 
+              href={founder.portfolio} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block w-full"
+            >
+              <ShinyButton className="w-60">
+               View Portfolio
+              </ShinyButton>
+            </a>
+          )}
+
           {/* Social Links */}
-          <div className="flex justify-center space-x-4">
+          <div className="mt-6 flex justify-center space-x-4">
             {founder.social?.linkedin && (
               <a
                 href={founder.social.linkedin}
@@ -92,7 +110,7 @@ const FounderCard = ({ founder }: { founder: Founder }) => (
                 href={founder.social.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/30 text-gray-700 backdrop-blur-sm transition-all duration-300 hover:bg-blue-400 hover:text-white dark:bg-gray-800/50 dark:text-gray-300 dark:hover:bg-blue-400"
+                className="flex pt-5 h-10 w-10 items-center justify-center rounded-full bg-white/30 text-gray-700 backdrop-blur-sm transition-all duration-300 hover:bg-blue-400 hover:text-white dark:bg-gray-800/50 dark:text-gray-300 dark:hover:bg-blue-400"
                 aria-label={`${founder.name}'s Twitter`}
               >
                 <FaTwitter size={18} />

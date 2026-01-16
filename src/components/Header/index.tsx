@@ -7,6 +7,7 @@ import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
 import { useTheme } from "next-themes";
 import { ShinyButton } from "../ui/shiny-button";
+
 const Header = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [logoClass, setLogoClass] = useState("");
@@ -23,6 +24,7 @@ const Header = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleStickyNavbar);
+    return () => window.removeEventListener("scroll", handleStickyNavbar);
   }, []);
 
   const [openIndex, setOpenIndex] = useState(-1);
@@ -38,12 +40,11 @@ const Header = () => {
       className={`header top-0 left-0 z-[9999] flex w-full items-center ${
         sticky
           ? "fixed shadow-sticky bg-white/10 dark:bg-black/10 backdrop-blur-lg transition-all"
-          : "absolute "
+          : "absolute"
       }`}
     >
       <div className="container">
-        <div className="relative  flex items-center justify-between">
-
+        <div className="relative flex items-center justify-between">
           {/* LOGO */}
           <div className="w-60 max-w-full px-2">
             <Link
@@ -65,7 +66,6 @@ const Header = () => {
           {/* RIGHT SIDE ICONS ONLY ON MOBILE */}
           <div className="flex items-center gap-3 lg:hidden absolute right-0 top-1/2 -translate-y-1/2 z-[9999]">
             <ThemeToggler />
-
             <button
               onClick={navbarToggleHandler}
               aria-label="Mobile Menu"
@@ -89,18 +89,24 @@ const Header = () => {
             </button>
           </div>
 
-          {/* NAVIGATION + DESKTOP ICONS (unchanged) */}
-          <div className="flex w-full items-center  justify-between px-6">
-
+          {/* NAVIGATION + DESKTOP ICONS */}
+          <div className="flex w-full items-center justify-between px-6">
             {/* NAV MENU */}
             <nav
-              className={`navbar  absolute right-4 z-30 w-[250px] rounded border px-6 py-4 duration-300 bg-white/10 lg:backdrop-blur-none    backdrop-blur-xl  dark:border-white/10
-              lg:static lg:w-auto lg:bg-transparent lg:border-none lg:p-0 lg:opacity-100 lg:visible
-              ${
-                navbarOpen
-                  ? "top-full opacity-100 visible"
-                  : "top-[120%] opacity-0 invisible"
-              }`}
+              className={`navbar absolute right-4 z-30 w-[250px] rounded border px-6 py-4 duration-300
+                ${
+                  // Always use backdrop blur when menu is open on mobile
+                  navbarOpen
+                    ? "top-full opacity-100 visible bg-white/90 dark:bg-black/90 backdrop-blur-xl border-gray-200 dark:border-white/10"
+                    : "top-[120%] opacity-0 invisible"
+                }
+                lg:static lg:w-auto lg:border-none lg:bg-transparent lg:p-0 lg:opacity-100 lg:visible lg:backdrop-blur-none
+                ${
+                  // Apply backdrop blur for sticky header in desktop
+                  sticky
+                    ? "lg:backdrop-blur-lg"
+                    : ""
+                }`}
             >
               <ul className="block lg:flex lg:space-x-12">
                 {menuData.map((menuItem, index) => (
@@ -125,14 +131,19 @@ const Header = () => {
                           {menuItem.title}
                           <span className="pl-3">▼</span>
                         </p>
-
                         <div
-                          className={`submenu bg-white dark:bg-dark rounded-sm shadow-lg lg:absolute lg:left-0 lg:top-full lg:w-[250px] p-4 transition-all
-                          ${
-                            openIndex === index
-                              ? "block"
-                              : "hidden lg:opacity-0 lg:invisible lg:group-hover:visible lg:group-hover:opacity-100"
-                          }`}
+                          className={`submenu rounded-sm shadow-lg lg:absolute lg:left-0 lg:top-full lg:w-[250px] p-4 transition-all
+                            ${
+                              openIndex === index
+                                ? "block"
+                                : "hidden lg:opacity-0 lg:invisible lg:group-hover:visible lg:group-hover:opacity-100"
+                            }
+                            ${
+                              // Apply backdrop blur to submenu
+                              sticky || navbarOpen
+                                ? "bg-white/90 dark:bg-black/90 backdrop-blur-xl"
+                                : "bg-white dark:bg-dark"
+                            }`}
                         >
                           {menuItem.submenu?.map((sub, i) => (
                             <Link
@@ -151,20 +162,13 @@ const Header = () => {
               </ul>
             </nav>
 
-            {/* DESKTOP RIGHT SIDE ICONS (unchanged) */}
+            {/* DESKTOP RIGHT SIDE ICONS */}
             <div className="hidden lg:flex items-center gap-4">
-
-              <Link
-                href="https://calendly.com/infomohdaftab/30min"
-                className=""
-              >
-                              <ShinyButton children={"Book a free Demo"}></ShinyButton>
-
+              <Link href="https://calendly.com/infomohdaftab/30min">
+                <ShinyButton>Book a free Demo</ShinyButton>
               </Link>
-
               <ThemeToggler />
             </div>
-
           </div>
         </div>
       </div>
