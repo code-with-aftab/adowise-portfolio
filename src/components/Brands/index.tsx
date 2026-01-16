@@ -24,7 +24,7 @@ const Brands = () => {
   }, []);
 
   return (
-    <section className="py-8 md:py-12 lg:py-20 bg-gradient-to-r  dark:from-gray-900/80 dark:to-slate-900/80 overflow-hidden">
+    <section className="  bg-gradient-to-r pt-10  dark:from-gray-900/80 dark:to-slate-900/80 overflow-hidden">
       <div className="container mx-auto px-2 sm:px-4">
         {/* FIXED Marquee - Mobile Responsive */}
         <div className="relative overflow-hidden rounded-lg">

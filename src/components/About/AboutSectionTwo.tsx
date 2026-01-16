@@ -6,7 +6,7 @@ const AboutSectionTwo = () => {
       <div className="container">
         <div className="-mx-4 flex flex-wrap items-center">
           {/* Image Column */}
-          <div className="w-full px-4 lg:w-1/2">
+          {/* <div className="w-full px-4 lg:w-1/2">
             <div
               className="relative mx-auto mb-12 aspect-25/24 max-w-[500px] text-center lg:m-0"
               data-wow-delay=".15s"
@@ -24,7 +24,7 @@ const AboutSectionTwo = () => {
                 className="hidden drop-shadow-three dark:block dark:drop-shadow-none"
               />
             </div>
-          </div>
+          </div> */}
 
           {/* Text Column */}
           <div className="w-full px-4 lg:w-1/2">

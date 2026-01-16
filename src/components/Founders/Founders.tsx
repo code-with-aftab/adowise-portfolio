@@ -52,8 +52,8 @@ const FounderCard = ({ founder }: { founder: Founder }) => (
             <Image
               src={founder.image}
               alt={founder.name}
-              width={160}
-              height={160}
+              width={150}
+              height={150}
               className="rounded-full object-cover"
             />
           </div>
@@ -61,7 +61,7 @@ const FounderCard = ({ founder }: { founder: Founder }) => (
 
         {/* Content */}
         <div className="relative">
-          <h4 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">
+          <h4 className="mb-2  md:text-2xl text-xl font-bold text-gray-900 dark:text-white">
             {founder.name}
           </h4>
           

@@ -99,11 +99,11 @@ const Testimonials = () => {
                       />
                       <div className="text-yellow-400 text-2xl select-none">★★★★★</div>
                     </div>
-                    <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-6 italic flex-1 select-none">
+                    <p className="md:text-sm text-xs text-gray-700 dark:text-gray-300 leading-relaxed mb-6 italic flex-1 select-none">
                       "{testimonial.content}"
                     </p>
                     <div className="select-none">
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white select-none">
+                      <h3 className="md:text-lg  text-sm font-bold text-gray-900 dark:text-white select-none">
                         {testimonial.name}
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400 select-none">
