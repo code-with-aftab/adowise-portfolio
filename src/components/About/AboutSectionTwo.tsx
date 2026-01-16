@@ -5,10 +5,10 @@ const AboutSectionTwo = () => {
     <section className="py-16 md:py-20 lg:py-28">
       <div className="container">
         <div className="-mx-4 flex flex-wrap items-center">
-          {/* Image Column */}
-          {/* <div className="w-full px-4 lg:w-1/2">
+          {/* Image Column - Hidden on small/medium, visible on large screens */}
+          <div className="hidden w-full px-4 lg:block lg:w-1/2">
             <div
-              className="relative mx-auto mb-12 aspect-25/24 max-w-[500px] text-center lg:m-0"
+              className="lg:relative mx-auto mb-12 aspect-25/24 max-w-[500px] text-center lg:m-0"
               data-wow-delay=".15s"
             >
               <Image
@@ -24,9 +24,9 @@ const AboutSectionTwo = () => {
                 className="hidden drop-shadow-three dark:block dark:drop-shadow-none"
               />
             </div>
-          </div> */}
+          </div>
 
-          {/* Text Column */}
+          {/* Text Column - Full width on small/medium, half on large */}
           <div className="w-full px-4 lg:w-1/2">
             <div className="max-w-[470px]">
               <div className="mb-9">
@@ -46,7 +46,7 @@ const AboutSectionTwo = () => {
                 </h3>
                 <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
                   Our dedicated support team ensures you have answers whenever
-                  you need them. From setup to scaling, we’ve got you covered.
+                  you need them. From setup to scaling, we've got you covered.
                 </p>
               </div>
 
