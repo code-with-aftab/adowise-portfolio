@@ -65,7 +65,7 @@ const FounderCard = ({ founder }: { founder: Founder }) => (
 
         {/* Content */}
         <div className="relative">
-          <h4 className="mb-2 text-xl font-bold text-gray-900 dark:text-white md:text-2xl">
+          <h4 className="mb-2 pt-4 text-xl font-bold text-gray-900 dark:text-white md:text-2xl">
             {founder.name}
           </h4>
           
@@ -110,7 +110,7 @@ const FounderCard = ({ founder }: { founder: Founder }) => (
                 href={founder.social.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex pt-5 h-10 w-10 items-center justify-center rounded-full bg-white/30 text-gray-700 backdrop-blur-sm transition-all duration-300 hover:bg-blue-400 hover:text-white dark:bg-gray-800/50 dark:text-gray-300 dark:hover:bg-blue-400"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/30 text-gray-700 backdrop-blur-sm transition-all duration-300 hover:bg-blue-400 hover:text-white dark:bg-gray-800/50 dark:text-gray-300 dark:hover:bg-blue-400"
                 aria-label={`${founder.name}'s Twitter`}
               >
                 <FaTwitter size={18} />
