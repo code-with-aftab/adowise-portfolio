@@ -49,34 +49,31 @@ const plans = [
     ],
   },
   {
-    name: "E-Commerce Website Plan",
+    name: "Fully Custom Enterprise Plan",
     price: "₹22,000",
     period: "one-time",
     description:
-      "A complete online store setup with checkout flow, payment integration, and order management.",
+      "A fully customized, professional website or web application tailored specifically to your exact business requirements.",
     delivery: "7–10 working days",
-    cta: "Choose E-Commerce Plan",
+    cta: "Choose Custom Plan",
     popular: false,
     features: [
-      "Complete online store setup",
-      "Product categories and product pages",
-      "Add to cart functionality",
-      "Secure checkout system",
+      "Fully customized architecture and design",
+      "Advanced functionality & API integrations",
+      "User authentication and profile management",
+      "Secure database and backend system",
       "Payment gateway integration (UPI / Card / Netbanking)",
-      "Order management dashboard",
-      "Customer order details and tracking system",
-      "Mobile responsive ecommerce design",
-      "Basic SEO setup for products",
-      "Email notification for orders",
-      "Website deployment on domain",
+      "Custom admin dashboard & CMS",
+      "Advanced user tracking and analytics",
+      "Mobile-first responsive progressive design",
+      "Advanced SEO & performance optimization",
+      "Automated email & SMS notifications",
+      "Website deployment & server setup",
+      "Domain Purchase included (₹800 - ₹1500/year value)",
+      "Initial Content/Data Setup included (₹2,000 - ₹5,000 value)",
+      "Monthly maintenance and updates (₹1,000 value)"
     ],
   },
-];
-
-const addOns = [
-  "Domain purchase: ₹800 – ₹1500/year",
-  "Product upload setup: ₹2,000 – ₹5,000",
-  "Monthly maintenance and updates: ₹1,000",
 ];
 
 const Pricing = () => {
@@ -107,7 +104,7 @@ const Pricing = () => {
               <p className="mb-6 text-sm font-semibold text-primary">Delivery: {plan.delivery}</p>
 
               <Link href={`/contact?plan=${encodeURIComponent(plan.name)}`} className="block mb-7">
-                <ShinyButton className="h-11 w-full border-primary/40 bg-primary/5 text-center">
+                <ShinyButton className="w-full border-primary/40 bg-primary/5 text-center">
                   {plan.cta}
                 </ShinyButton>
               </Link>
@@ -129,17 +126,6 @@ const Pricing = () => {
           ))}
         </div>
 
-        <div className="shadow-three dark:shadow-two relative mt-12 overflow-hidden rounded-xs border border-body-color/20 bg-white/80 p-8 backdrop-blur-xl dark:border-white/10 dark:bg-gray-dark/75">
-          <h3 className="text-dark mb-6 text-2xl font-bold dark:text-white">Additional Services (Optional)</h3>
-          <div className="grid gap-4 md:grid-cols-3">
-            {addOns.map((item) => (
-              <div key={item} className="rounded-xs border border-body-color/20 bg-white/70 p-4 dark:border-white/10 dark:bg-white/5">
-                <p className="text-body-color text-sm font-medium">{item}</p>
-              </div>
-            ))}
-          </div>
-          <div className="pointer-events-none absolute -right-12 bottom-0 h-32 w-32 rounded-full bg-primary/10 blur-2xl" />
-        </div>
       </div>
     </section>
   );
