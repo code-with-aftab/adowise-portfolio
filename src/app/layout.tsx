@@ -19,7 +19,7 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en">
       <head>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3458165392588157"
-     crossorigin="anonymous"></script>
+          crossOrigin="anonymous"></script>
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-WZCLJ6ML2S"
