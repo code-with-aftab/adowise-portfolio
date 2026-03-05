@@ -7,16 +7,18 @@ import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Stock Photos & Digital Assets for Free | Web Designers Blog Chandigarh & Himachal",
+  title: "10 Best Sites for Free Stock Photos & Digital Assets | Adowise Blog",
   description:
-    "Discover 10 amazing websites to download free stock photos and digital assets. Perfect for web designers, Next.js React developers, and agencies in Chandigarh, Punjab, and Himachal Pradesh.",
+    "Discover 10 amazing websites to download free high-quality stock photos and digital assets. Essential resources for web designers, Next.js React developers, and creative agencies worldwide.",
   keywords: [
     "free stock photos for websites",
     "download digital assets free",
-    "web design resources Chandigarh",
-    "Next.js developer Solan blog",
-    "Himachal Pradesh web design tips",
-    "design assets for React developers"
+    "best web design resources",
+    "Next.js developer blog",
+    "top web design tips",
+    "design assets for React developers",
+    "free UI kits for websites",
+    "download free web templates"
   ],
   openGraph: {
     title:

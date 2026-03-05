@@ -2,9 +2,16 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Adowise Web Development Agency",
+  title: "Privacy Policy | #1 Web Development Agency Privacy Terms",
   description:
-    "Read the privacy policy of Adowise, a Next.js React web development agency serving businesses in Chandigarh, Punjab and Himachal Pradesh.",
+    "Read the comprehensive privacy policy and data security standards of Adowise, the world's leading Next.js React web development and enterprise SaaS agency.",
+  keywords: [
+    "ADOWISE privacy policy",
+    "web development agency privacy",
+    "IT company data security",
+    "top tech agency policy",
+    "Next.js react agency terms"
+  ],
 };
 
 export default function PrivacyPolicy() {
@@ -230,7 +237,7 @@ export default function PrivacyPolicy() {
                   href="mailto:adowise.info@gmail.com"
                   className="font-medium text-primary hover:underline"
                 >
-                adowise.info@gmail.com
+                  adowise.info@gmail.com
                 </a>
               </p>
             </section>

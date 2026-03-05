@@ -3,16 +3,16 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Sign In to Adowise Dashboard | Client & Admin Login",
+  title: "Client Portal Sign In | Adowise Dashboard Login",
   description:
-    "Securely sign in to your Adowise account to manage websites, projects and analytics. Client and admin login for businesses in Chandigarh, Punjab and Himachal Pradesh.",
+    "Securely access your Adowise client portal to track website development progress, analytics, and manage your custom SaaS projects.",
   keywords: [
     "Adowise login",
     "web development client dashboard",
     "agency portal sign in",
-    "Chandigarh web agency login",
-    "Himachal Pradesh web client area",
-    "Next.js SaaS dashboard authentication"
+    "top IT firm client login",
+    "secure SaaS dashboard portal",
+    "Next.js client authentication"
   ],
   openGraph: {
     title: "Adowise Login - Access Your Web Development Dashboard",

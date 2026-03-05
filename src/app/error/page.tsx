@@ -3,15 +3,15 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "404 Page Not Found - Adowise Web Development Agency",
+  title: "404 Page Not Found | Adowise Web Development",
   description:
-    "This page could not be found on Adowise.in. Return to the homepage to explore Next.js React web development services for businesses in Chandigarh, Punjab and Himachal Pradesh.",
+    "We couldn't find this page. Return to the Adowise homepage to explore award-winning, high-performance web development and eCommerce solutions.",
   keywords: [
     "404 page Adowise",
     "page not found web agency",
-    "web development agency Chandigarh",
-    "Himachal Pradesh web developer error",
-    "Next.js React agency North India"
+    "top website making company error",
+    "Next.js React developer Adowise",
+    "global IT services not found"
   ],
   openGraph: {
     title: "404 - Page Not Found | Adowise Web Development Agency",

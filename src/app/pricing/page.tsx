@@ -3,9 +3,23 @@ import Pricing from "@/components/Pricing";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Pricing Plans | Adowise Web Development",
+  title: "Pricing | Affordable World-Class Web & SaaS Development Cost",
   description:
-    "Explore Adowise website development pricing plans for basic, business, and ecommerce websites with complete deployment support.",
+    "Get transparent, competitive pricing for premium website development, top eCommerce stores, and custom SaaS platforms. Flexible, high-quality development packages for startups and worldwide enterprises.",
+  keywords: [
+    "web development pricing",
+    "affordable SaaS development",
+    "ecommerce website cost",
+    "custom software development rates",
+    "best IT agency pricing",
+    "startup website packages",
+    "how much does a website cost",
+    "hire cheap but best web developer",
+    "website making monthly plans",
+    "Next.js react web app pricing",
+    "affordable enterprise software rates",
+    "best value web design agency"
+  ],
   alternates: {
     canonical: "https://adowise.in/pricing",
   },

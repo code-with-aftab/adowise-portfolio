@@ -5,42 +5,27 @@ import Breadcrumb from "@/components/Common/Breadcrumb";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Adowise - Next.js React Web Development Agency for Chandigarh, Punjab & Himachal",
+  title: "About Adowise | World's Leading Web & SaaS Development Agency",
   description:
-    "Adowise is a Next.js React web development agency based in Himachal Pradesh serving businesses in Chandigarh, Tricity, Punjab and North India with 7-day website delivery and startup-friendly pricing.",
+    "Learn about Adowise, the world's premier IT agency. We engineer top-tier Next.js React web apps, scalable Enterprise SaaS products, and custom portals to rapidly scale businesses globally.",
   keywords: [
-    "about Adowise web agency",
-    "Next.js React developer Himachal Pradesh",
-    "web development company Chandigarh",
-    "startup website agency North India",
-    "web designer Solan HP",
-    "SaaS and business website development"
+    "top global web agency",
+    "world-class IT company",
+    "premier SaaS development firm",
+    "enterprise software development",
+    "best Next.js React developers",
+    "global digital transformation",
+    "top IT outsourcing company",
+    "number one tech agency",
+    "expert web development team",
+    "custom enterprise portal design",
+    "global AI solutions provider",
+    "about adowise company"
   ],
-  openGraph: {
-    title:
-      "About Adowise - High-Performance Web Development for North Indian Businesses",
-    description:
-      "Learn about Adowise, a modern web development agency specializing in Next.js, React and Tailwind CSS for businesses in Chandigarh, Punjab and Himachal Pradesh.",
-    images: ["/og/about-adwise-agency.jpg"],
-    url: "https://adowise.in/about",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "About Adowise - Next.js React Web Development Agency",
-    description:
-      "Know the story, mission and expertise behind Adowise, helping North Indian startups and businesses launch fast, conversion-focused websites.",
-    images: ["/twitter/about-adwise-agency.jpg"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
   alternates: {
     canonical: "https://adowise.in/about",
   },
 };
-
 
 const AboutPage = () => {
   return (
