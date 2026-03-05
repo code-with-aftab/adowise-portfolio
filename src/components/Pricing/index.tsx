@@ -3,6 +3,7 @@
 import SectionTitle from "../Common/SectionTitle";
 import { ShinyButton } from "../ui/shiny-button";
 import { Check } from "lucide-react";
+import Link from "next/link";
 
 const plans = [
   {
@@ -82,30 +83,19 @@ const Pricing = () => {
   return (
     <section id="pricing" className="relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
-        <SectionTitle
-          title="Website Development Pricing Plans"
-          paragraph="Transparent pricing with delivery timelines. Pick the package that matches your business stage and goals."
-          center
-          width="665px"
-        />
+
 
         <div className="grid items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
           {plans.map((plan) => (
             <article
               key={plan.name}
-              className={`relative overflow-hidden rounded-xs border p-8 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 ${
-                plan.popular
-                  ? "border-primary/40 bg-white/95 shadow-2xl dark:bg-gray-dark/95 lg:scale-[1.02]"
-                  : "border-body-color/20 bg-white/80 shadow-three dark:border-white/10 dark:bg-gray-dark/75"
-              }`}
+              className={`relative overflow-hidden rounded-xs border p-8 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 ${plan.popular
+                ? "border-primary/40 bg-white/95 shadow-2xl dark:bg-gray-dark/95 lg:scale-[1.02]"
+                : "border-body-color/20 bg-white/80 shadow-three dark:border-white/10 dark:bg-gray-dark/75"
+                }`}
             >
               <div className="mb-6 flex items-center justify-between gap-2">
                 <h3 className="text-dark text-2xl font-bold dark:text-white">{plan.name}</h3>
-                {plan.popular && (
-                  <span className="bg-primary text-primary-foreground rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
-                    Most Popular
-                  </span>
-                )}
               </div>
 
               <div className="mb-2 flex items-end gap-2">
@@ -116,9 +106,11 @@ const Pricing = () => {
               <p className="text-body-color mb-3 text-sm leading-relaxed">{plan.description}</p>
               <p className="mb-6 text-sm font-semibold text-primary">Delivery: {plan.delivery}</p>
 
-              <ShinyButton className="mb-7 h-11 w-full border-primary/40 bg-primary/5 text-center">
-                {plan.cta}
-              </ShinyButton>
+              <Link href={`/contact?plan=${encodeURIComponent(plan.name)}`} className="block mb-7">
+                <ShinyButton className="h-11 w-full border-primary/40 bg-primary/5 text-center">
+                  {plan.cta}
+                </ShinyButton>
+              </Link>
 
               <ul className="space-y-3">
                 {plan.features.map((feature) => (
