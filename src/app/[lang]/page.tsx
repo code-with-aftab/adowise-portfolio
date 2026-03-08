@@ -10,8 +10,9 @@ import Hero from "@/components/Hero";
 import Testimonials from "@/components/Testimonials";
 import { getMessages } from "@/lib/i18n";
 
-export default async function Home({ params }: { params: { lang: string } }) {
-  const messages = await getMessages(params.lang);
+export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const messages = await getMessages(lang);
   const t = messages.Index;
 
   return (

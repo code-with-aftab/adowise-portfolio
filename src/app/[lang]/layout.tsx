@@ -3,8 +3,9 @@ import ClientLayout from "../client-layout";
 import "../../styles/index.css";
 import { getMessages } from "@/lib/i18n";
 
-export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
-  const messages = await getMessages(params.lang);
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const messages = await getMessages(lang);
   const t = messages.Index;
 
   return {
@@ -47,8 +48,8 @@ export async function generateMetadata({ params }: { params: { lang: string } })
     publisher: "Adowise",
     openGraph: {
       type: "website",
-      locale: params.lang === "hi" ? "hi_IN" : "en_US",
-      url: `https://adowise.in/${params.lang}`,
+      locale: lang === "hi" ? "hi_IN" : "en_US",
+      url: `https://adowise.in/${lang}`,
       title: t.title,
       description: t.description,
       siteName: "Adowise",
@@ -80,7 +81,7 @@ export async function generateMetadata({ params }: { params: { lang: string } })
       },
     },
     alternates: {
-      canonical: `https://adowise.in/${params.lang}`,
+      canonical: `https://adowise.in/${lang}`,
       languages: {
         "en-US": "https://adowise.in/en",
         "hi-IN": "https://adowise.in/hi",
@@ -93,15 +94,16 @@ export async function generateMetadata({ params }: { params: { lang: string } })
   };
 }
 
-export default function LocaleLayout({
+export default async function LocaleLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }) {
+  const { lang } = await params;
   return (
-    <html suppressHydrationWarning lang={params.lang}>
+    <html suppressHydrationWarning lang={lang}>
       <head>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3458165392588157"
           crossOrigin="anonymous"></script>
