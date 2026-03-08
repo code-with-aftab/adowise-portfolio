@@ -49,21 +49,28 @@ const Founders = ({ messages }: { messages?: any }) => {
 
   const FounderCard = ({ founder }: { founder: Founder }) => (
     <div className="w-full px-4 md:w-1/2">
-      <div className="group relative mb-10 overflow-hidden rounded-2xl">
-        {/* Glassmorphism card */}
-        <div className="relative z-10 rounded-2xl border border-white/20 bg-white/10 p-8 backdrop-blur-xl dark:border-gray-700/30 dark:bg-gray-900/40">
+      <div className="group relative mb-10 overflow-hidden rounded-2xl bg-gray-200 dark:bg-gray-900/70 border border-white/20 dark:border-white/30 backdrop-blur-xl p-8 hover:bg-gray/20 dark:hover:bg-gray-700/70 hover:border-white/30 dark:hover:border-white/50 hover:-translate-y-2 transition-all duration-500">
+        {/* Gradient overlay for premium effect matching Features card */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#A9B9FB]/40 to-[#5E7CF7]/40 dark:from-white/10 dark:via-transparent dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"></div>
+
+        {/* Glassmorphism content wrapper */}
+        <div className="relative z-10 w-full">
 
           {/* Profile Image with glow effect */}
           <div className="relative mx-auto mb-6 h-40 w-40">
             {/* Blurred light circle in background */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-xl"></div>
-            <div className="relative h-full w-full overflow-hidden rounded-full border-4 border-white/50 dark:border-gray-600/50">
+            <div
+              className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-xl animate-morph"
+            ></div>
+            <div
+              className="relative h-full w-full overflow-hidden border-4 border-white/50 dark:border-gray-600/50 transition-all duration-300 group-hover:scale-105 animate-morph"
+            >
               <Image
                 src={founder.image}
                 alt={founder.name}
                 width={160}
                 height={160}
-                className={`h-full w-full rounded-full object-cover ${founder.imageClassName || ""}`}
+                className={`h-full w-full object-cover ${founder.imageClassName || ""}`}
               />
             </div>
           </div>
@@ -125,6 +132,8 @@ const Founders = ({ messages }: { messages?: any }) => {
           </div>
         </div>
 
+        {/* Bottom accent line */}
+        <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-primary to-transparent group-hover:w-full transition-all duration-700"></div>
         {/* Background gradient light effect */}
         <div className="absolute -inset-1 -z-10 rounded-2xl bg-gradient-to-r from-blue-500/10 via-transparent to-purple-500/10 blur-3xl"></div>
       </div>
