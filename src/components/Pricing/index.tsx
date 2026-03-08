@@ -5,83 +5,80 @@ import { ShinyButton } from "../ui/shiny-button";
 import { Check } from "lucide-react";
 import Link from "next/link";
 
-const plans = [
-  {
-    name: "Basic Website Plan",
-    price: "₹8,000",
-    period: "one-time",
-    description:
-      "Up to 5 pages for startups and local businesses that need a clean, responsive website fast.",
-    delivery: "3–5 working days",
-    cta: "Choose Basic Plan",
-    popular: false,
-    features: [
-      "Up to 5 pages (Home, About, Services, Contact, Gallery)",
-      "Responsive design (mobile, tablet, desktop)",
-      "Clean UI layout",
-      "Contact / enquiry form with email integration",
-      "Basic SEO setup (title, meta tags)",
-      "Google Map integration (if required)",
-      "Social media links integration",
-      "Domain connection and website deployment",
-    ],
-  },
-  {
-    name: "Business Website Plan",
-    price: "₹15,000",
-    period: "one-time",
-    description:
-      "For growing businesses that need custom presentation, editable content, and stronger conversion structure.",
-    delivery: "5–7 working days",
-    cta: "Choose Business Plan",
-    popular: true,
-    features: [
-      "Up to 8–10 pages website",
-      "Custom UI design (professional layout)",
-      "Fully responsive design",
-      "Admin panel / CMS to update content",
-      "Blog / news section (optional)",
-      "Contact form with email notification",
-      "Basic SEO optimization",
-      "Google Analytics integration",
-      "Social media integration",
-      "Website deployment on domain",
-    ],
-  },
-  {
-    name: "Fully Custom Enterprise Plan",
-    price: "₹22,000",
-    period: "one-time",
-    description:
-      "A fully customized, professional website or web application tailored specifically to your exact business requirements.",
-    delivery: "7–10 working days",
-    cta: "Choose Custom Plan",
-    popular: false,
-    features: [
-      "Fully customized architecture and design",
-      "Advanced functionality & API integrations",
-      "User authentication and profile management",
-      "Secure database and backend system",
-      "Payment gateway integration (UPI / Card / Netbanking)",
-      "Custom admin dashboard & CMS",
-      "Advanced user tracking and analytics",
-      "Mobile-first responsive progressive design",
-      "Advanced SEO & performance optimization",
-      "Automated email & SMS notifications",
-      "Website deployment & server setup",
-      "Domain Purchase included (₹800 - ₹1500/year value)",
-      "Initial Content/Data Setup included (₹2,000 - ₹5,000 value)",
-      "Monthly maintenance and updates (₹1,000 value)"
-    ],
-  },
-];
+const Pricing = ({ messages }: { messages?: any }) => {
+  const t = messages?.Pricing || {};
 
-const Pricing = () => {
+  const plans = [
+    {
+      name: t.basic_name || "Basic Website Plan",
+      price: "₹8,000",
+      period: "one-time",
+      description: t.basic_desc || "Up to 5 pages for startups and local businesses that need a clean, responsive website fast.",
+      delivery: "3–5 working days",
+      cta: t.cta_basic || "Choose Basic Plan",
+      popular: false,
+      features: [
+        "Up to 5 pages (Home, About, Services, Contact, Gallery)",
+        "Responsive design (mobile, tablet, desktop)",
+        "Clean UI layout",
+        "Contact / enquiry form with email integration",
+        "Basic SEO setup (title, meta tags)",
+        "Google Map integration (if required)",
+        "Social media links integration",
+        "Domain connection and website deployment",
+      ],
+    },
+    {
+      name: t.business_name || "Business Website Plan",
+      price: "₹15,000",
+      period: "one-time",
+      description: t.business_desc || "For growing businesses that need custom presentation, editable content, and stronger conversion structure.",
+      delivery: "5–7 working days",
+      cta: t.cta_business || "Choose Business Plan",
+      popular: true,
+      features: [
+        "Up to 8–10 pages website",
+        "Custom UI design (professional layout)",
+        "Fully responsive design",
+        "Admin panel / CMS to update content",
+        "Blog / news section (optional)",
+        "Contact form with email notification",
+        "Basic SEO optimization",
+        "Google Analytics integration",
+        "Social media integration",
+        "Website deployment on domain",
+      ],
+    },
+    {
+      name: t.custom_name || "Fully Custom Enterprise Plan",
+      price: "₹22,000",
+      period: "one-time",
+      description: t.custom_desc || "A fully customized, professional website or web application tailored specifically to your exact business requirements.",
+      delivery: "7–10 working days",
+      cta: t.cta_custom || "Choose Custom Plan",
+      popular: false,
+      features: [
+        "Fully customized architecture and design",
+        "Advanced functionality & API integrations",
+        "User authentication and profile management",
+        "Secure database and backend system",
+        "Payment gateway integration (UPI / Card / Netbanking)",
+        "Custom admin dashboard & CMS",
+        "Advanced user tracking and analytics",
+        "Mobile-first responsive progressive design",
+        "Advanced SEO & performance optimization",
+        "Automated email & SMS notifications",
+        "Website deployment & server setup",
+        "Domain Purchase included (₹800 - ₹1500/year value)",
+        "Initial Content/Data Setup included (₹2,000 - ₹5,000 value)",
+        "Monthly maintenance and updates (₹1,000 value)"
+      ],
+    },
+  ];
+
   return (
     <section id="pricing" className="relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
-
-
         <div className="grid items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
           {plans.map((plan) => (
             <article
@@ -101,7 +98,7 @@ const Pricing = () => {
               </div>
 
               <p className="text-body-color mb-3 text-sm leading-relaxed">{plan.description}</p>
-              <p className="mb-6 text-sm font-semibold text-primary">Delivery: {plan.delivery}</p>
+              <p className="mb-6 text-sm font-semibold text-primary">{t.delivery || "Delivery"}: {plan.delivery}</p>
 
               <Link href={`/contact?plan=${encodeURIComponent(plan.name)}`} className="block mb-7">
                 <ShinyButton className="w-full border-primary/40 bg-primary/5 text-center">
@@ -125,7 +122,6 @@ const Pricing = () => {
             </article>
           ))}
         </div>
-
       </div>
     </section>
   );

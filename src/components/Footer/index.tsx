@@ -1,14 +1,14 @@
 import Link from "next/link";
 
 const Footer = ({ lang, messages }: { lang: string; messages: any }) => {
-  const t = messages.Footer;
+  const t = messages?.Footer || {};
   return (
     <footer className="bg-gray-900 text-gray-300 py-12">
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
         {/* Brand */}
         <div>
-          <h2 className="text-2xl font-bold text-white mb-4">Adowise</h2>
+          <img src="/adowise-logo.png" alt="Adowise" className="h-9 w-9 object-contain mb-4" />
           <p className="text-gray-400">
             {t.brand_desc}
           </p>

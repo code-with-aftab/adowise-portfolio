@@ -8,41 +8,45 @@ import Features from "@/components/Features";
 import Founders from "@/components/Founders/Founders";
 import Hero from "@/components/Hero";
 import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
 import { getMessages } from "@/lib/i18n";
 
 export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const messages = await getMessages(lang);
   const t = messages.Index;
+  const trendsT = messages.Trends || {};
 
   return (
     <>
       <ScrollUp />
       <Hero
+        messages={messages}
         title={t.hero_title}
         subtitle={t.hero_subtitle}
       />
       <Features messages={messages} />
       <Brands />
       <AboutSectionOne messages={messages} />
-      <AboutSectionTwo />
-      <Testimonials />
-      <Founders />
+      <AboutSectionTwo messages={messages} />
+      <Testimonials messages={messages} />
+      <Founders messages={messages} />
       <Contact messages={messages} />
       <Blog messages={messages} />
+      <FAQ messages={messages} />
 
       {/* Massive Trending Trends SEO Section */}
       <section id="trends" className="py-20 bg-gray-50 dark:bg-black/40 overflow-hidden border-t border-gray-100 dark:border-white/5">
         <div className="container">
           <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold text-dark dark:text-white mb-4">Future Trends & Global Innovation We Lead</h2>
-            <p className="text-base text-body-color dark:text-gray-400">At Adowise, we don't just follow trends; we define them. Explore the future with us.</p>
+            <h2 className="text-3xl font-bold text-dark dark:text-white mb-4">{trendsT.header_title || "Future Trends & Global Innovation We Lead"}</h2>
+            <p className="text-base text-body-color dark:text-gray-400">{trendsT.header_subtitle || "At Adowise, we don't just follow trends; we define them. Explore the future with us."}</p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 opacity-70 hover:opacity-100 transition-opacity">
             {/* Tech & AI */}
             <div className="space-y-2">
-              <h3 className="text-sm font-bold uppercase text-primary mb-3">AI & Computing</h3>
+              <h3 className="text-sm font-bold uppercase text-primary mb-3">{trendsT.ai_computing || "AI & Computing"}</h3>
               <p className="text-xs text-dark dark:text-white/70">Generative AI (ChatGPT, Gemini, Claude)</p>
               <p className="text-xs text-dark dark:text-white/70">AI Video (Sora, Runway, Luma)</p>
               <p className="text-xs text-dark dark:text-white/70">Agentic AI & RAG</p>
@@ -52,7 +56,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
             {/* Space & Science */}
             <div className="space-y-2">
-              <h3 className="text-sm font-bold uppercase text-primary mb-3">Space & Future Science</h3>
+              <h3 className="text-sm font-bold uppercase text-primary mb-3">{trendsT.space_science || "Space & Future Science"}</h3>
               <p className="text-xs text-dark dark:text-white/70">SpaceX Starship & Artemis</p>
               <p className="text-xs text-dark dark:text-white/70">Mars Sample Return</p>
               <p className="text-xs text-dark dark:text-white/70">CRISPR & Gene Editing 2.0</p>
@@ -62,7 +66,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
             {/* Culture & Economy */}
             <div className="space-y-2">
-              <h3 className="text-sm font-bold uppercase text-primary mb-3">Business & Culture</h3>
+              <h3 className="text-sm font-bold uppercase text-primary mb-3">{trendsT.business_culture || "Business & Culture"}</h3>
               <p className="text-xs text-dark dark:text-white/70">Creator Economy & DeFi</p>
               <p className="text-xs text-dark dark:text-white/70">Hybrid Work & 4-Day Week</p>
               <p className="text-xs text-dark dark:text-white/70">Quiet Luxury & Stealth Wealth</p>
@@ -72,7 +76,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
             {/* Lifestyle & Health */}
             <div className="space-y-2">
-              <h3 className="text-sm font-bold uppercase text-primary mb-3">Lifestyle & Health</h3>
+              <h3 className="text-sm font-bold uppercase text-primary mb-3">{trendsT.lifestyle_health || "Lifestyle & Health"}</h3>
               <p className="text-xs text-dark dark:text-white/70">GLP-1 Weight Loss (Ozempic)</p>
               <p className="text-xs text-dark dark:text-white/70">Microbiome & Longevity</p>
               <p className="text-xs text-dark dark:text-white/70">Set-jetting & Coolcations</p>
@@ -82,7 +86,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
             {/* Connectivity & Security */}
             <div className="space-y-2">
-              <h3 className="text-sm font-bold uppercase text-primary mb-3">Security & Connect</h3>
+              <h3 className="text-sm font-bold uppercase text-primary mb-3">{trendsT.security_connect || "Security & Connect"}</h3>
               <p className="text-xs text-dark dark:text-white/70">Zero Trust Architecture</p>
               <p className="text-xs text-dark dark:text-white/70">6G Networks & Ambient Tech</p>
               <p className="text-xs text-dark dark:text-white/70">Deepfake Detection</p>

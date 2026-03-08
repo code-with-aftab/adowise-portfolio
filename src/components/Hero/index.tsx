@@ -3,7 +3,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const Hero = ({ title, subtitle }: { title?: string; subtitle?: string }) => {
+const Hero = ({ messages, title, subtitle }: { messages?: any; title?: string; subtitle?: string }) => {
+  const t = messages?.Hero || {};
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -70,7 +71,7 @@ const Hero = ({ title, subtitle }: { title?: string; subtitle?: string }) => {
                     rel="noopener noreferrer"
                     className="bg-primary hover:bg-primary/80 rounded-xs px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out"
                   >
-                    Contact Us
+                    {t.contact_us || "Contact Us"}
                   </Link>
                 </motion.div>
               </div>

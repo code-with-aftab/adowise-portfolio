@@ -15,7 +15,7 @@ const Header = ({ lang, messages }: { lang: string; messages: any }) => {
   const [logoClass, setLogoClass] = useState("");
   const { theme, resolvedTheme } = useTheme();
   const pathname = usePathname();
-  const t = messages.Menu;
+  const t = messages?.Menu || {};
 
   const navbarToggleHandler = () => setNavbarOpen(!navbarOpen);
 
@@ -57,10 +57,8 @@ const Header = ({ lang, messages }: { lang: string; messages: any }) => {
               <img
                 src="/adowise-logo.png"
                 alt="Adowise"
-                className={`logo h-10 w-auto min-w-[120px] ${logoClass}`}
-                style={{ objectFit: 'contain' }}
+                className={`logo h-9 w-9 object-contain ${logoClass}`}
               />
-              <span className="dark:text-white">Adowise</span>
             </Link>
           </div>
 

@@ -3,7 +3,7 @@ import type { NextRequest } from "next/server";
 
 let locales = ["en", "hi", "es", "fr", "de", "ar"];
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
     const { pathname } = request.nextUrl;
     const pathnameHasLocale = locales.some(
         (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
@@ -19,7 +19,15 @@ export function middleware(request: NextRequest) {
 
 export const config = {
     matcher: [
-        // Skip all internal paths (_next)
-        "/((?!_next|api|images|favicon.ico).*)",
+        /*
+         * Match all request paths except for the ones starting with:
+         * - api (API routes)
+         * - _next/static (static files)
+         * - _next/image (image optimization files)
+         * - images (local image folder)
+         * - favicon.ico (favicon file)
+         * - Any files with an extension (e.g. .png, .jpg, .svg, .gif, .webp)
+         */
+        "/((?!api|_next/static|_next/image|images|favicon.ico|.*\\.(?:png|jpg|jpeg|svg|gif|webp|ico|css|js)).*)",
     ],
 };

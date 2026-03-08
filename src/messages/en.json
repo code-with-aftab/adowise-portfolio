@@ -3,7 +3,8 @@
         "title": "Adowise | Premier Web Development, Moltbot & Claude Bot Specialists",
         "description": "Adowise is a world-class agency crafting high-performance websites, SaaS platforms, and AI-driven solutions like Moltbot and Claude Bot.",
         "hero_title": "The Excellence in World-Class Digital Products",
-        "hero_subtitle": "Adowise is a premier global IT agency engineering high-performance websites, AI-powered SaaS platforms, and bespoke digital solutions to scale your business to the global stage."
+        "hero_subtitle": "Adowise is a premier global IT agency engineering high-performance websites, AI-powered SaaS platforms, and bespoke digital solutions to scale your business to the global stage.",
+        "contact_us": "Contact Us"
     },
     "Menu": {
         "home": "Home",
@@ -38,6 +39,20 @@
         "title": "Latest Trends & Insights",
         "subtitle": "Stay updated with the latest in Agentic AI, Sora, SpaceX Starship, and more."
     },
+    "Pricing": {
+        "title": "Transparent Pricing Plans",
+        "subtitle": "Choose the best plan to scale your business.",
+        "basic_name": "Basic Website Plan",
+        "basic_desc": "Up to 5 pages for startups and local businesses.",
+        "business_name": "Business Website Plan",
+        "business_desc": "For growing businesses that need custom solutions.",
+        "custom_name": "Custom Enterprise Plan",
+        "custom_desc": "Fully customized application tailored to your needs.",
+        "cta_basic": "Choose Basic Plan",
+        "cta_business": "Choose Business Plan",
+        "cta_custom": "Choose Custom Plan",
+        "delivery": "Delivery"
+    },
     "Contact": {
         "title": "Need Help? Open a Ticket",
         "subtitle": "Our support team will get back to you ASAP via email.",
@@ -51,6 +66,53 @@
         "loading_text": "Submitting...",
         "success_msg": "Your ticket has been submitted!",
         "error_msg": "Something went wrong. Try again."
+    },
+    "AboutTwo": {
+        "title1": "Bug-free & Optimized Code",
+        "content1": "Every component and feature in Adowise is built with clean, maintainable code. Reduce errors, improve performance, and ship faster without headaches.",
+        "title2": "24/7 Premium Support",
+        "content2": "Our dedicated support team ensures you have answers whenever you need them. From setup to scaling, we've got you covered.",
+        "title3": "Built on Next.js & React",
+        "content3": "Leveraging the power of React and Next.js, Adowise delivers lightning-fast performance, SEO-friendly pages, and a scalable architecture for all your projects."
+    },
+    "Testimonials": {
+        "stats": "25+ Trusted SaaS Teams",
+        "title": "Client Success Stories",
+        "subtitle": "Real developers building with Adowise",
+        "client1_content": "Adowise helped us develop a custom trading analytics platform. Their dedication and expertise exceeded our expectations.",
+        "client2_content": "Transformative for our wholesale platform. Their SaaS solution integrated advanced analytics seamlessly.",
+        "client3_content": "Helped develop our travel dashboard solution. Delivered high-quality work that exceeded expectations.",
+        "client4_content": "Production-ready Next.js boilerplate accelerated our timeline. Clean, maintainable codebase.",
+        "client5_content": "Mobile-first design system perfect for scaling. Saved significant development time."
+    },
+    "Founders": {
+        "title": "Meet Our Founders",
+        "view_portfolio": "View Portfolio",
+        "founder1_bio": "Mohd Altaf is a visionary leader with over 6 years of experience in SaaS and web technologies. He focuses on building scalable and user-friendly platforms.",
+        "founder2_bio": "Mohd Aftab is a tech enthusiast and full-stack developer. He leads the product and engineering teams ensuring top-notch quality and innovation."
+    },
+    "Trends": {
+        "header_title": "Future Trends & Global Innovation We Lead",
+        "header_subtitle": "At Adowise, we don't just follow trends; we define them. Explore the future with us.",
+        "ai_computing": "AI & Computing",
+        "space_science": "Space & Future Science",
+        "business_culture": "Business & Culture",
+        "lifestyle_health": "Lifestyle & Health",
+        "security_connect": "Security & Connect"
+    },
+    "FAQ": {
+        "title": "Frequently Asked Questions",
+        "subtitle": "Everything you need to know about our services and processes.",
+        "q1": "How long does it take to build a website?",
+        "a1": "A basic website takes 3-5 days, while a full business site takes 5-7 days. Custom enterprise solutions usually take 7-10 working days.",
+        "q2": "Do you provide hosting and domain?",
+        "a2": "Yes, our high-tier plans include domain purchase and setup. We also handle deployment and can guide you on the best hosting providers.",
+        "q3": "Is the code SEO friendly?",
+        "a3": "Absolutely. We use Next.js for server-side rendering (SSR), ensuring your site is lightning fast and perfectly crawlable by search engines.",
+        "q4": "Can I update the content myself?",
+        "a4": "Yes, our Business and Enterprise plans come with an easy-to-use Admin Panel/CMS so you can update text, images, and blog posts yourself.",
+        "q5": "Do you offer post-launch support?",
+        "a5": "We provide 24/7 premium support and monthly maintenance to ensure your platform runs smoothly as your business scales."
     },
     "Footer": {
         "brand_desc": "Building modern digital experiences with high-quality design, clean code, and meaningful user experiences.",

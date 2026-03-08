@@ -7,53 +7,55 @@ import { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 
-const testimonialData: Testimonial[] = [
-  {
-    id: 1,
-    name: "Abhishek Gupta",
-    designation: "Founder, Tradylytics",
-    content: "Adowise helped us develop a custom trading analytics platform. Their dedication and expertise exceeded our expectations.",
-    image: "https://avatars.githubusercontent.com/u/108542318?v=4",
-    star: 5,
-  },
-  {
-    id: 2,
-    name: "Ananya", 
-    designation: "Founder, Wholesalewale",
-    content: "Transformative for our wholesale platform. Their SaaS solution integrated advanced analytics seamlessly.",
-    image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&h=400&fit=crop&crop=face",
-    star: 5,
-  },
-  {
-    id: 3,
-    name: "Ram Bansal",
-    designation: "Founder, Explorin",
-    content: "Helped develop our travel dashboard solution. Delivered high-quality work that exceeded expectations.",
-    image: "https://media.licdn.com/dms/image/v2/C4D03AQFTDAn1hA_w3g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1649158698974?e=1770249600&v=beta&t=dO_iT_PBllmbr_ndA4Fjg6K-S9SLx6uKA4UheUlqf7o",
-    star: 5,
-  },
-  {
-    id: 4,
-    name: "Rahul Sharma",
-    designation: "Full Stack Developer",
-    content: "Production-ready Next.js boilerplate accelerated our timeline. Clean, maintainable codebase.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
-    star: 5,
-  },
-  {
-    id: 5,
-    name: "Priya S.",
-    designation: "React Developer",
-    content: "Mobile-first design system perfect for scaling. Saved significant development time.",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face",
-    star: 5,
-  },
-];
+const Testimonials = ({ messages }: { messages?: any }) => {
+  const t = messages?.Testimonials || {};
 
-const Testimonials = () => {
+  const testimonialData: Testimonial[] = [
+    {
+      id: 1,
+      name: "Abhishek Gupta",
+      designation: "Founder, Tradylytics",
+      content: t.client1_content || "Adowise helped us develop a custom trading analytics platform. Their dedication and expertise exceeded our expectations.",
+      image: "https://avatars.githubusercontent.com/u/108542318?v=4",
+      star: 5,
+    },
+    {
+      id: 2,
+      name: "Ananya",
+      designation: "Founder, Wholesalewale",
+      content: t.client2_content || "Transformative for our wholesale platform. Their SaaS solution integrated advanced analytics seamlessly.",
+      image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&h=400&fit=crop&crop=face",
+      star: 5,
+    },
+    {
+      id: 3,
+      name: "Ram Bansal",
+      designation: "Founder, Explorin",
+      content: t.client3_content || "Helped develop our travel dashboard solution. Delivered high-quality work that exceeded expectations.",
+      image: "https://media.licdn.com/dms/image/v2/C4D03AQFTDAn1hA_w3g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1649158698974?e=1770249600&v=beta&t=dO_iT_PBllmbr_ndA4Fjg6K-S9SLx6uKA4UheUlqf7o",
+      star: 5,
+    },
+    {
+      id: 4,
+      name: "Rahul Sharma",
+      designation: "Full Stack Developer",
+      content: t.client4_content || "Production-ready Next.js boilerplate accelerated our timeline. Clean, maintainable codebase.",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+      star: 5,
+    },
+    {
+      id: 5,
+      name: "Priya S.",
+      designation: "React Developer",
+      content: t.client5_content || "Mobile-first design system perfect for scaling. Saved significant development time.",
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face",
+      star: 5,
+    },
+  ];
+
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { 
-      loop: true, 
+    {
+      loop: true,
       align: "center",
       containScroll: "trimSnaps"
     },
@@ -67,25 +69,25 @@ const Testimonials = () => {
         <div className="text-center mb-1">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full mb-8">
             <span className="text-2xl font-bold">25+</span>
-            <span>Trusted SaaS Teams</span>
+            <span>{t.stats || "Trusted SaaS Teams"}</span>
           </div>
           <SectionTitle
-            title="Client Success Stories"
-            paragraph="Real developers building with Adowise"
+            title={t.title || "Client Success Stories"}
+            paragraph={t.subtitle || "Real developers building with Adowise"}
             center
           />
         </div>
 
         {/* Embla Carousel */}
         <div className="py-2 mx-auto overflow-hidden">
-          <div 
+          <div
             className="embla select-none"
             ref={emblaRef}
           >
             <div className="embla__container flex h-full">
               {testimonialData.map((testimonial) => (
-                <div 
-                  key={testimonial.id} 
+                <div
+                  key={testimonial.id}
                   className="embla__slide flex-[0_0_80%] md:flex-[0_0_60%] lg:flex-[0_0_40%] pl-4 min-h-[300px]"
                 >
                   <div className="bg-white/70 dark:bg-gray-800/80 backdrop-blur-xl rounded-3xl border border-gray-600/50 dark:border-gray-700/50 p-6 h-full flex flex-col">

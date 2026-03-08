@@ -1,6 +1,7 @@
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import Pricing from "@/components/Pricing";
 import { Metadata } from "next";
+import { getMessages } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Pricing | Affordable World-Class Web & SaaS Development Cost",
@@ -25,14 +26,18 @@ export const metadata: Metadata = {
   },
 };
 
-const PricingPage = () => {
+const PricingPage = async ({ params }: { params: Promise<{ lang: string }> }) => {
+  const { lang } = await params;
+  const messages = await getMessages(lang);
+  const t = messages.Pricing || {};
+
   return (
     <>
       <Breadcrumb
-        pageName="Pricing"
-        description="Transparent website development pricing for startups, businesses, and ecommerce brands."
+        pageName={t.title || "Pricing"}
+        description={t.subtitle || "Transparent website development pricing for startups, businesses, and ecommerce brands."}
       />
-      <Pricing />
+      <Pricing messages={messages} />
     </>
   );
 };

@@ -1,5 +1,6 @@
 import Blog from "@/components/Blog";
 import Breadcrumb from "@/components/Common/Breadcrumb";
+import { getMessages } from "@/lib/i18n";
 
 import { Metadata } from "next";
 
@@ -17,14 +18,16 @@ export const metadata: Metadata = {
     ],
 };
 
-const BlogPage = () => {
+const BlogPage = async ({ params }: { params: Promise<{ lang: string }> }) => {
+    const { lang } = await params;
+    const messages = await getMessages(lang);
     return (
         <>
             <Breadcrumb
                 pageName="Blog Grid"
                 description="Explore our latest thoughts, ideas, and insights on technology, design, and business growth."
             />
-            <Blog />
+            <Blog messages={messages} />
         </>
     );
 };

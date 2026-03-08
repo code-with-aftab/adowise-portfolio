@@ -3,7 +3,7 @@ import SingleFeature from "./SingleFeature";
 import featuresData from "./featuresData";
 
 const Features = ({ messages }: { messages: any }) => {
-  const t = messages.Features;
+  const t = messages?.Features || {};
   return (
     <>
       <section id="features" className="pt-20 mt-20 md:py-20 lg:py-28">

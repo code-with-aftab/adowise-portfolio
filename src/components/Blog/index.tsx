@@ -3,7 +3,7 @@ import SingleBlog from "./SingleBlog";
 import blogData from "./blogData";
 
 const Blog = ({ messages }: { messages: any }) => {
-  const t = messages.Blog;
+  const t = messages?.Blog || {};
   return (
     <section
       id="blog"

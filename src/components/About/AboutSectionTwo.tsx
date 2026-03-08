@@ -1,6 +1,7 @@
 import Image from "next/image";
 
-const AboutSectionTwo = () => {
+const AboutSectionTwo = ({ messages }: { messages?: any }) => {
+  const t = messages?.AboutTwo || {};
   return (
     <section className="py-16 md:py-20 lg:py-28">
       <div className="container">
@@ -31,33 +32,28 @@ const AboutSectionTwo = () => {
             <div className="max-w-[470px]">
               <div className="mb-9">
                 <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                  Bug-free & Optimized Code
+                  {t.title1 || "Bug-free & Optimized Code"}
                 </h3>
                 <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                  Every component and feature in Awoise is built with clean,
-                  maintainable code. Reduce errors, improve performance, and
-                  ship faster without headaches.
+                  {t.content1 || "Every component and feature in Adowise is built with clean, maintainable code. Reduce errors, improve performance, and ship faster without headaches."}
                 </p>
               </div>
 
               <div className="mb-9">
                 <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                  24/7 Premium Support
+                  {t.title2 || "24/7 Premium Support"}
                 </h3>
                 <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                  Our dedicated support team ensures you have answers whenever
-                  you need them. From setup to scaling, we've got you covered.
+                  {t.content2 || "Our dedicated support team ensures you have answers whenever you need them. From setup to scaling, we've got you covered."}
                 </p>
               </div>
 
               <div className="mb-1">
                 <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                  Built on Next.js & React
+                  {t.title3 || "Built on Next.js & React"}
                 </h3>
                 <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                  Leveraging the power of React and Next.js, Awoise delivers
-                  lightning-fast performance, SEO-friendly pages, and a
-                  scalable architecture for all your projects.
+                  {t.content3 || "Leveraging the power of React and Next.js, Adowise delivers lightning-fast performance, SEO-friendly pages, and a scalable architecture for all your projects."}
                 </p>
               </div>
             </div>
