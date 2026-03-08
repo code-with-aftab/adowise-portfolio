@@ -1,4 +1,4 @@
-export const locales = ["en", "hi", "es", "fr", "de", "ar"];
+export const locales = ["en", "hi", "es", "fr", "de", "ar", "ur"];
 
 const deepMerge = (target: any, source: any) => {
     const output = { ...target };
