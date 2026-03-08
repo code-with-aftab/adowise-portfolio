@@ -8,6 +8,8 @@ import menuData from "./menuData";
 import { useTheme } from "next-themes";
 import { ShinyButton } from "../ui/shiny-button";
 
+import LanguagePicker from "./LanguagePicker";
+
 const Header = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [logoClass, setLogoClass] = useState("");
@@ -38,8 +40,8 @@ const Header = () => {
   return (
     <header
       className={`header top-0 left-0 z-[9999] flex w-full items-center ${sticky
-          ? "fixed shadow-sticky bg-white/10 dark:bg-black/10 backdrop-blur-lg transition-all"
-          : "absolute"
+        ? "fixed shadow-sticky bg-white/10 dark:bg-black/10 backdrop-blur-lg transition-all"
+        : "absolute"
         }`}
     >
       <div className="container">
@@ -64,6 +66,7 @@ const Header = () => {
 
           {/* RIGHT SIDE ICONS ONLY ON MOBILE */}
           <div className="flex items-center gap-3 lg:hidden absolute right-0 top-1/2 -translate-y-1/2 z-[9999]">
+            <LanguagePicker />
             <ThemeToggler />
             <button
               onClick={navbarToggleHandler}
@@ -111,8 +114,8 @@ const Header = () => {
                       <Link
                         href={menuItem.path}
                         className={`flex py-2 lg:py-6 text-base ${pathname === menuItem.path
-                            ? "text-primary dark:text-white"
-                            : "text-dark dark:text-white/70 hover:text-primary dark:hover:text-white"
+                          ? "text-primary dark:text-white"
+                          : "text-dark dark:text-white/70 hover:text-primary dark:hover:text-white"
                           }`}
                       >
                         {menuItem.title}
@@ -161,6 +164,7 @@ const Header = () => {
               <Link href="https://calendly.com/infomohdaftab/30min">
                 <ShinyButton>Book a free Demo</ShinyButton>
               </Link>
+              <LanguagePicker />
               <ThemeToggler />
             </div>
           </div>

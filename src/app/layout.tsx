@@ -5,11 +5,11 @@ import "../styles/index.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://adowise.in"),
   title: {
-    default: "Adowise | Premier Web Development & Digital Agency",
-    template: "%s | Adowise",
+    default: "Adowise | Premier Web Development, Moltbot & Claude Bot Specialists",
+    template: "%s | Adowise - Leading Digital Agency",
   },
   description:
-    "Adowise is a world-class agency crafting high-performance websites, SaaS platforms, and data-driven digital marketing strategies. Scale your business globally with our top-tier solutions.",
+    "Adowise is a world-class agency crafting high-performance websites, SaaS platforms, and AI-driven solutions like Moltbot and Claude Bot. Scale your business globally with our top-tier digital strategies and trending tech.",
   keywords: [
     "top IT agency in the world",
     "best SaaS development company globally",
@@ -18,6 +18,25 @@ export const metadata: Metadata = {
     "high-performance ecommerce solutions",
     "global digital transformation agency",
     "expert Next.js developers for hire",
+    "moltbot",
+    "clawd bot",
+    "Agentic AI experts",
+    "Generative AI solutions",
+    "Sora AI video production",
+    "RAG architecture for enterprise",
+    "Prompt Engineering services",
+    "SpaceX Starship tech partners",
+    "Artemis mission software",
+    "Creator economy platforms",
+    "DeFi development",
+    "Carbon capture tech solutions",
+    "Quantum machine learning",
+    "Edge AI for IoT",
+    "Short-form video strategy",
+    "Brat summer web design",
+    "Quiet luxury digital agency",
+    "Digital nomad tech support",
+    "trending tech agency 2026",
   ],
   authors: [{ name: "Adowise Team", url: "https://adowise.in" }],
   creator: "Adowise",
@@ -26,9 +45,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://adowise.in",
-    title: "Adowise | Premier Web Development & Digital Agency",
+    title: "Adowise | Premier Web Development & Trending AI Solutions",
     description:
-      "Scale your business globally with our world-class web development, design, and digital marketing services.",
+      "Scale your business globally with our world-class web development, design, and digital marketing services. Experts in Moltbot and Claude Bot integrations.",
     siteName: "Adowise",
     images: [
       {
@@ -41,9 +60,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Adowise | Premier Web Development & Digital Agency",
+    title: "Adowise | Premier Web Development & AI Agents",
     description:
-      "Scale your business globally with our world-class web development, design, and digital marketing services.",
+      "Scale your business globally with our world-class web development, design, and digital marketing services. Specialists in Moltbot & Claude Bot.",
     images: ["/images/og-image.png"],
     creator: "@adowise",
   },
@@ -60,6 +79,14 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://adowise.in",
+    languages: {
+      "en-US": "https://adowise.in/en",
+      "hi-IN": "https://adowise.in/hi",
+      "es-ES": "https://adowise.in/es",
+      "fr-FR": "https://adowise.in/fr",
+      "de-DE": "https://adowise.in/de",
+      "ar-SA": "https://adowise.in/ar",
+    },
   },
 };
 

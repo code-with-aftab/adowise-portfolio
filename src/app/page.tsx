@@ -14,9 +14,9 @@ import Video from "@/components/Video";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Adowise | #1 Global Web Development, AI & SaaS Agency",
+  title: "Adowise | #1 Global Web Development, Moltbot, Claude Bot & SaaS Agency",
   description:
-    "Adowise is the world's premier IT agency for website development, high-performance eCommerce, AI-powered SaaS platforms, and bespoke digital solutions designed to scale your business globally. Hire the best Next.js web developers.",
+    "Adowise is the world's premier IT agency for website development, high-performance eCommerce, AI-powered SaaS platforms like Moltbot, and Claude Bot integrations. Scale your business globally with trending AI solutions.",
   keywords: [
     "top IT agency in the world",
     "best SaaS development company globally",
@@ -33,7 +33,13 @@ export const metadata: Metadata = {
     "website creation for small business",
     "React developer for hire",
     "AI automation services for enterprises",
-    "custom software development company"
+    "custom software development company",
+    "moltbot",
+    "clawd bot",
+    "Claude Ai Bot",
+    "Moltbot AI",
+    "trending AI bots 2026",
+    "best AI agents for business",
   ],
   alternates: {
     canonical: "https://adowise.in/",
@@ -54,6 +60,72 @@ export default function Home() {
       <Founders />
       <Contact />
       <Blog />
+
+      {/* Massive Trending Trends SEO Section */}
+      <section id="trends" className="py-20 bg-gray-50 dark:bg-black/40 overflow-hidden border-t border-gray-100 dark:border-white/5">
+        <div className="container">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-bold text-dark dark:text-white mb-4">Future Trends & Global Innovation We Lead</h2>
+            <p className="text-base text-body-color dark:text-gray-400">At Adowise, we don't just follow trends; we define them. Explore the future with us.</p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 opacity-70 hover:opacity-100 transition-opacity">
+            {/* Tech & AI */}
+            <div className="space-y-2">
+              <h3 className="text-sm font-bold uppercase text-primary mb-3">AI & Computing</h3>
+              <p className="text-xs text-dark dark:text-white/70">Generative AI (ChatGPT, Gemini, Claude)</p>
+              <p className="text-xs text-dark dark:text-white/70">AI Video (Sora, Runway, Luma)</p>
+              <p className="text-xs text-dark dark:text-white/70">Agentic AI & RAG</p>
+              <p className="text-xs text-dark dark:text-white/70">Edge AI & SLMs</p>
+              <p className="text-xs text-dark dark:text-white/70">Quantum Machine Learning</p>
+            </div>
+
+            {/* Space & Science */}
+            <div className="space-y-2">
+              <h3 className="text-sm font-bold uppercase text-primary mb-3">Space & Future Science</h3>
+              <p className="text-xs text-dark dark:text-white/70">SpaceX Starship & Artemis</p>
+              <p className="text-xs text-dark dark:text-white/70">Mars Sample Return</p>
+              <p className="text-xs text-dark dark:text-white/70">CRISPR & Gene Editing 2.0</p>
+              <p className="text-xs text-dark dark:text-white/70">Anti-Aging & Longevity</p>
+              <p className="text-xs text-dark dark:text-white/70">Neuromorphic Computing</p>
+            </div>
+
+            {/* Culture & Economy */}
+            <div className="space-y-2">
+              <h3 className="text-sm font-bold uppercase text-primary mb-3">Business & Culture</h3>
+              <p className="text-xs text-dark dark:text-white/70">Creator Economy & DeFi</p>
+              <p className="text-xs text-dark dark:text-white/70">Hybrid Work & 4-Day Week</p>
+              <p className="text-xs text-dark dark:text-white/70">Quiet Luxury & Stealth Wealth</p>
+              <p className="text-xs text-dark dark:text-white/70">Brat Summer & Digital Nomads</p>
+              <p className="text-xs text-dark dark:text-white/70">Loud Budgeting & UGC</p>
+            </div>
+
+            {/* Lifestyle & Health */}
+            <div className="space-y-2">
+              <h3 className="text-sm font-bold uppercase text-primary mb-3">Lifestyle & Health</h3>
+              <p className="text-xs text-dark dark:text-white/70">GLP-1 Weight Loss (Ozempic)</p>
+              <p className="text-xs text-dark dark:text-white/70">Microbiome & Longevity</p>
+              <p className="text-xs text-dark dark:text-white/70">Set-jetting & Coolcations</p>
+              <p className="text-xs text-dark dark:text-white/70">Van Life & E-bikes</p>
+              <p className="text-xs text-dark dark:text-white/70">Zero-proof Drinks & Gut Health</p>
+            </div>
+
+            {/* Connectivity & Security */}
+            <div className="space-y-2">
+              <h3 className="text-sm font-bold uppercase text-primary mb-3">Security & Connect</h3>
+              <p className="text-xs text-dark dark:text-white/70">Zero Trust Architecture</p>
+              <p className="text-xs text-dark dark:text-white/70">6G Networks & Ambient Tech</p>
+              <p className="text-xs text-dark dark:text-white/70">Deepfake Detection</p>
+              <p className="text-xs text-dark dark:text-white/70">Smart Dust & Haptics</p>
+              <p className="text-xs text-dark dark:text-white/70">Post-quantum Crypto</p>
+            </div>
+          </div>
+
+          <div className="mt-12 flex flex-wrap justify-center gap-x-6 gap-y-3 opacity-30 text-[10px] uppercase tracking-widest text-dark dark:text-white text-center">
+            <span>Asteroid Mining</span> • <span>Orbital Debris Cleanup</span> • <span>Bioprinting 3D Organs</span> • <span>Vertical Farming</span> • <span>Carbon Capture Tech</span> • <span>Waste-to-energy</span> • <span>Alternative Proteins</span> • <span>Floating Offshore Wind</span> • <span>Space Manufacturing</span> • <span>Commercial Space Stations</span>
+          </div>
+        </div>
+      </section>
 
       {/* WhatsApp Floating Button */}
       {/* WhatsApp Floating Button */}

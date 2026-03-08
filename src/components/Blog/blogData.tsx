@@ -170,6 +170,62 @@ const blogData: Blog[] = [
     tags: ["career", "growth", "soft-skills"],
     publishDate: "2025",
   },
+  {
+    id: 13,
+    title: "Agentic AI: The Next Frontier in Enterprise Automation",
+    paragraph:
+      "Explore how autonomous AI agents are performing complex tasks, from coding to customer support, powered by RAG and advanced LLMs like Claude and Gemini.",
+    image: "https://img.freepik.com/free-vector/ai-technology-concept-illustration_114360-123.jpg",
+    author: {
+      name: "Adowise Labs",
+      image: "/images/blog/author-01.png",
+      designation: "AI Strategist",
+    },
+    tags: ["agentic-ai", "automation", "claude"],
+    publishDate: "2026",
+  },
+  {
+    id: 14,
+    title: "Sora & The Revolution of AI Video Generation",
+    paragraph:
+      "Analyzing the impact of Sora, Runway, and Luma on the creative industry. How AI video generators are changing cinema, marketing, and storytelling in 2026.",
+    image: "https://img.freepik.com/free-vector/video-production-concept-illustration_114360-1234.jpg",
+    author: {
+      name: "Visual Team",
+      image: "/images/blog/author-02.png",
+      designation: "Creative Director",
+    },
+    tags: ["sora", "ai-video", "future"],
+    publishDate: "2026",
+  },
+  {
+    id: 15,
+    title: "SpaceX Starship, Artemis, and the New Space Economy",
+    paragraph:
+      "From lunar bases to Mars missions, explore how SpaceX and NASA's Artemis are opening up commercial space manufacturing and asteroid mining opportunities.",
+    image: "https://img.freepik.com/free-vector/space-exploration-concept-illustration_114360-1235.jpg",
+    author: {
+      name: "Tech News",
+      image: "/images/blog/author-03.png",
+      designation: "Innovation Analyst",
+    },
+    tags: ["spacex", "artemis", "science"],
+    publishDate: "2026",
+  },
+  {
+    id: 16,
+    title: "DeFi 2.0 and the Future of Embedded Finance",
+    paragraph:
+      "A deep dive into Decentralized Finance (DeFi), CBDCs, and how Buy Now Pay Later (BNPL) is reshaping the global economy and digital transactions.",
+    image: "https://img.freepik.com/free-vector/digital-economy-concept-illustration_114360-1236.jpg",
+    author: {
+      name: "FinTech Hub",
+      image: "/images/blog/author-04.png",
+      designation: "Finance Expert",
+    },
+    tags: ["defi", "finance", "crypto"],
+    publishDate: "2026",
+  },
 ];
 
 export default blogData;
