@@ -29,10 +29,10 @@ const Testimonials = ({ messages }: { messages?: any }) => {
     },
     {
       id: 3,
-      name: "Ram Bansal",
+      name: "Vikram Mehta",
       designation: "Founder, Explorin",
       content: t.client3_content || "Helped develop our travel dashboard solution. Delivered high-quality work that exceeded expectations.",
-      image: "https://media.licdn.com/dms/image/v2/C4D03AQFTDAn1hA_w3g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1649158698974?e=1770249600&v=beta&t=dO_iT_PBllmbr_ndA4Fjg6K-S9SLx6uKA4UheUlqf7o",
+      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face",
       star: 5,
     },
     {

@@ -89,18 +89,6 @@ const featuresData: Feature[] = [
     paragraph:
       "Expert integration of Moltbot and Claude Bot to automate workflows, scale operations, and enhance customer experience.",
   },
-  {
-    id: 7,
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 40 40" className="fill-current">
-        <path opacity="0.5" d="M20 0C31.0457 0 40 8.9543 40 20C40 31.0457 31.0457 40 20 40C8.9543 40 0 31.0457 0 20C0 8.9543 8.9543 0 20 0Z" />
-        <path d="M10 20C10 13.3726 15.3726 8 22 8C28.6274 8 34 13.3726 34 20C34 26.6274 28.6274 32 22 32C15.3726 32 10 26.6274 10 20ZM22 10C16.4772 10 12 14.4772 12 20C12 25.5228 16.4772 30 22 30C27.5228 30 32 25.5228 32 20C32 14.4772 27.5228 10 22 10Z" />
-      </svg>
-    ),
-    title: "Modern UI/UX Engineering",
-    paragraph:
-      "We build clean, responsive, and interactive user interfaces using React, Tailwind CSS, and modern design systems.",
-  },
 ];
 
 export default featuresData;

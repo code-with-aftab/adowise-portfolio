@@ -9,6 +9,7 @@ type Founder = {
   image: string;
   bio: string;
   portfolio?: string;
+  imageClassName?: string;
   social?: {
     linkedin?: string;
     twitter?: string;
@@ -26,6 +27,7 @@ const Founders = ({ messages }: { messages?: any }) => {
       image: "/images/altaf.jpg",
       bio: t.founder1_bio || "Altaf is a visionary leader with over 6 years of experience in SaaS and web technologies. He focuses on building scalable and user-friendly platforms.",
       portfolio: "https://altaf.adowise.com",
+      imageClassName: "object-top",
       social: {
         linkedin: "https://linkedin.com/in/reachmohdaltaf",
         twitter: "https://twitter.com/reachmohdaltaf",
@@ -55,13 +57,13 @@ const Founders = ({ messages }: { messages?: any }) => {
           <div className="relative mx-auto mb-6 h-40 w-40">
             {/* Blurred light circle in background */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-xl"></div>
-            <div className="relative rounded-full border-4 border-white/50 p-1 dark:border-gray-600/50">
+            <div className="relative h-full w-full overflow-hidden rounded-full border-4 border-white/50 dark:border-gray-600/50">
               <Image
                 src={founder.image}
                 alt={founder.name}
-                width={150}
-                height={150}
-                className="rounded-full object-cover"
+                width={160}
+                height={160}
+                className={`h-full w-full rounded-full object-cover ${founder.imageClassName || ""}`}
               />
             </div>
           </div>

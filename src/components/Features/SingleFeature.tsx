@@ -12,6 +12,7 @@ const SingleFeature = ({ feature, messages }: { feature: Feature; messages: any 
     <div className="w-full  md:max-w-[370px]">
       <div
         className="
+    h-full w-full
     wow fadeInUp group relative overflow-hidden rounded-2xl 
     bg-gray-200  dark:bg-gray-900/70 
     backdrop-blur-xl 

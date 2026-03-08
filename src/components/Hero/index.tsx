@@ -19,7 +19,7 @@ const Hero = ({ messages, title, subtitle }: { messages?: any; title?: string; s
       >
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
-            <div className="w-full px-4">
+            <div className="w-full px-2 md:px-4">
               <div className="mx-auto py-4 max-w-[800px] text-center relative">
                 {/* two glows left & right */}
                 <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-between">
@@ -41,7 +41,7 @@ const Hero = ({ messages, title, subtitle }: { messages?: any; title?: string; s
                   initial={{ filter: "blur(10px)", opacity: 0 }}
                   animate={isVisible ? { filter: "blur(0px)", opacity: 1 } : {}}
                   transition={{ duration: 1, ease: "easeOut" }}
-                  className="mb-5 text-3xl leading-tight font-bold text-black sm:text-4xl sm:leading-tight md:text-6xl md:leading-tight dark:text-white"
+                  className="mb-5 text-4xl leading-tight font-bold text-black sm:text-4xl sm:leading-tight md:text-6xl md:leading-tight dark:text-white"
                 >
                   {title || "The Excellence in World-Class Digital Products"}
                 </motion.h1>
@@ -52,9 +52,9 @@ const Hero = ({ messages, title, subtitle }: { messages?: any; title?: string; s
                     opacity: 1
                   } : {}}
                   transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-                  className="text-body-color dark:text-body-color-dark mb-4 text-xs leading-relaxed! sm:text-xs md:text-lg"
+                  className="text-body-color dark:text-body-color-dark mb-4 text-xs leading-relaxed! sm:text-sm md:text-lg max-w-[600px] mx-auto"
                 >
-                  {subtitle || "Adowise is a premier global IT agency engineering high-performance websites, AI-powered SaaS platforms, and bespoke digital solutions to scale your business to the global stage."}
+                  {subtitle || "Adowise is a premier IT agency building high-performance websites, AI-powered SaaS platforms, and digital solutions to scale your business globally."}
                 </motion.p>
                 <motion.div
                   initial={{ filter: "blur(10px)", opacity: 0 }}
