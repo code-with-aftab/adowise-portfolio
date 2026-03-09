@@ -56,7 +56,7 @@ const Header = ({ lang, messages }: { lang: string; messages: any }) => {
       <div className="container">
         <div className="relative flex items-center justify-between">
           {/* LOGO */}
-          <div className="w-60 max-w-full px-2">
+          <div className="w-60 max-w-full px-2 flex-shrink-0">
             <Link
               href={`/${lang}`}
               className={`header-logo flex w-full items-center gap-2 text-3xl font-bold ${sticky ? "py-5 lg:py-2" : "py-8"
@@ -172,9 +172,9 @@ const Header = ({ lang, messages }: { lang: string; messages: any }) => {
             </nav>
 
             {/* DESKTOP RIGHT SIDE ICONS */}
-            <div className="hidden lg:flex items-center gap-4">
+            <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
               <Link href={settings.calendly_url || "https://calendly.com/infomohdaftab/30min"}>
-                <ShinyButton>{settings.demo_btn_text || t.demo}</ShinyButton>
+                <ShinyButton className="whitespace-nowrap">{settings.demo_btn_text || t.demo}</ShinyButton>
               </Link>
               <LanguagePicker />
               <ThemeToggler />
