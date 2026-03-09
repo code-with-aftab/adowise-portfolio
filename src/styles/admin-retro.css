@@ -88,8 +88,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 3.25rem;
-    width: 3.25rem;
+    height: 2.75rem;
+    width: 2.75rem;
     background-color: white;
     border: 3px solid black;
     transition: all 0.2s ease;
@@ -112,6 +112,23 @@
     background-color: #5DADE2;
     transform: translate(-2px, -2px);
     box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.admin-nav-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.admin-nav-scrollbar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.admin-nav-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.admin-nav-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .retro-title {

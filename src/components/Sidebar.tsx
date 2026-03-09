@@ -38,16 +38,16 @@ export function Sidebar({ lang }: { lang: string }) {
     };
 
     return (
-        <aside className="w-24 flex flex-col h-screen sticky top-0 border-r-[4px] border-black bg-[#5DADE2] z-40 overflow-hidden">
+        <aside className="w-20 flex flex-col h-screen sticky top-0 border-r-[4px] border-black bg-[#5DADE2] z-40 overflow-hidden">
             {/* Logo - fixed top */}
             <div className="flex items-center justify-center py-5 shrink-0">
-                <div className="h-12 w-12 bg-white border-[4px] border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center text-black font-black text-xl rotate-[-3deg]">
+                <div className="h-10 w-10 bg-white border-[4px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center text-black font-black text-lg rotate-[-3deg]">
                     A
                 </div>
             </div>
 
             {/* Nav items - scrollable middle */}
-            <nav className="flex-1 overflow-y-auto overflow-x-hidden scrollbar-hide flex flex-col items-center gap-2 py-2 px-2 min-h-0">
+            <nav className="flex-1 overflow-y-auto overflow-x-hidden admin-nav-scrollbar flex flex-col items-center gap-3 py-2 px-1 min-h-0">
                 {navItems.map((item) => {
                     const href = `/${lang}${item.href}`;
                     const isActive = pathname === href;
@@ -61,27 +61,27 @@ export function Sidebar({ lang }: { lang: string }) {
                                 isActive && "retro-sidebar-item-active"
                             )}
                         >
-                            <item.icon size={24} className="text-black" />
+                            <item.icon size={20} className="text-black" />
                         </Link>
                     );
                 })}
             </nav>
 
             {/* Bottom actions - fixed bottom */}
-            <div className="flex flex-col items-center py-4 gap-3 shrink-0 border-t-2 border-black/20">
+            <div className="flex flex-col items-center py-4 gap-3 shrink-0 border-t-2 border-black/20 bg-[#5DADE2]">
                 <button
                     className="retro-sidebar-item bg-[#FFDE03]"
                     onClick={() => window.open(`/${lang}`, "_blank")}
                     title="View Website"
                 >
-                    <ExternalLink size={20} className="text-black" />
+                    <ExternalLink size={18} className="text-black" />
                 </button>
                 <button
                     className="retro-sidebar-item bg-[#F48FB1]"
                     onClick={handleLogout}
                     title="Sign Out"
                 >
-                    <LogOut size={20} className="text-black" />
+                    <LogOut size={18} className="text-black" />
                 </button>
             </div>
         </aside>
