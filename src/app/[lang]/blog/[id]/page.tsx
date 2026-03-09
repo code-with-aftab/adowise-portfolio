@@ -13,7 +13,7 @@ export async function generateMetadata({
   const resolvedParams = await params;
   const id = parseInt(resolvedParams.id);
   const blog = blogData.find((item) => item.id === id);
-  
+
   if (!blog) {
     return {
       title: "Blog Not Found | Startup Nextjs Template",
@@ -23,8 +23,8 @@ export async function generateMetadata({
 
   // Construct absolute URL for images
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com';
-  const imageUrl = blog.image.startsWith('http') 
-    ? blog.image 
+  const imageUrl = blog.image.startsWith('http')
+    ? blog.image
     : `${siteUrl}${blog.image}`;
 
   return {
@@ -81,7 +81,7 @@ const BlogDetailsPage = async ({ params }: { params: Promise<{ id: string }> }) 
   const resolvedParams = await params;
   const id = parseInt(resolvedParams.id);
   const blog = blogData.find((item) => item.id === id);
-  
+
   if (!blog) {
     return (
       <section className="pt-[150px] pb-[120px]">
@@ -108,7 +108,7 @@ const BlogDetailsPage = async ({ params }: { params: Promise<{ id: string }> }) 
                 <h2 className="mb-8 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight">
                   {blog.title}
                 </h2>
-                
+
                 {/* Blog Meta Info */}
                 <div className="border-body-color/10 mb-10 flex flex-wrap items-center justify-between border-b pb-4 dark:border-white/10">
                   <div className="flex flex-wrap items-center">
@@ -176,18 +176,36 @@ const BlogDetailsPage = async ({ params }: { params: Promise<{ id: string }> }) 
                       />
                     </div>
                   </div>
-                  
-                  <p className="text-body-color mb-8 text-base font-medium leading-relaxed sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
-                    {blog.paragraph}
-                  </p>
-                  
-                  {/* More content sections would go here */}
-                  <div className="bg-primary/10 relative z-10 mb-10 overflow-hidden rounded-md p-8 md:p-9 lg:p-8 xl:p-9">
-                    <p className="text-body-color text-center text-base font-medium italic">
-                      This is a highlighted quote section. You can add important quotes or insights here related to the blog post.
-                    </p>
-                  </div>
-                  
+
+                  {blog.content ? (
+                    <div
+                      className="prose prose-lg dark:prose-invert max-w-none mb-10
+                        [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-black [&_h2]:dark:text-white [&_h2]:mt-8 [&_h2]:mb-4
+                        [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:text-black [&_h3]:dark:text-white [&_h3]:mt-6 [&_h3]:mb-3
+                        [&_h4]:text-lg [&_h4]:font-semibold [&_h4]:text-black [&_h4]:dark:text-white [&_h4]:mt-4 [&_h4]:mb-2
+                        [&_p]:text-body-color [&_p]:text-base [&_p]:leading-relaxed [&_p]:mb-4 [&_p]:sm:text-lg [&_p]:sm:leading-relaxed
+                        [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4 [&_ul]:space-y-2
+                        [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-4 [&_ol]:space-y-2
+                        [&_li]:text-body-color [&_li]:text-base [&_li]:leading-relaxed
+                        [&_blockquote]:bg-primary/10 [&_blockquote]:border-l-4 [&_blockquote]:border-primary [&_blockquote]:p-6 [&_blockquote]:rounded-md [&_blockquote]:my-8 [&_blockquote]:italic
+                        [&_strong]:font-bold [&_strong]:text-black [&_strong]:dark:text-white
+                        [&_a]:text-primary [&_a]:underline [&_a]:hover:opacity-80"
+                      dangerouslySetInnerHTML={{ __html: blog.content }}
+                    />
+                  ) : (
+                    <>
+                      <p className="text-body-color mb-8 text-base font-medium leading-relaxed sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
+                        {blog.paragraph}
+                      </p>
+
+                      <div className="bg-primary/10 relative z-10 mb-10 overflow-hidden rounded-md p-8 md:p-9 lg:p-8 xl:p-9">
+                        <p className="text-body-color text-center text-base font-medium italic">
+                          This article is being updated with more detailed content. Check back soon!
+                        </p>
+                      </div>
+                    </>
+                  )}
+
                   {/* Tags and Share */}
                   <div className="items-center justify-between sm:flex">
                     <div className="mb-5">
