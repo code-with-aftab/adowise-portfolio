@@ -71,7 +71,7 @@ const Header = ({ lang, messages }: { lang: string; messages: any }) => {
           </div>
 
           {/* RIGHT SIDE ICONS ONLY ON MOBILE */}
-          <div className={`flex items-center gap-3 lg:hidden absolute ${lang === 'ar' || lang === 'ur' ? 'left-0' : 'right-0'} top-1/2 -translate-y-1/2 z-[9999]`}>
+          <div className={`flex items-center gap-3 lg:hidden absolute ${lang === 'ar' || lang === 'ur' ? 'left-4' : 'right-4'} top-1/2 -translate-y-1/2 z-[9999]`}>
             <LanguagePicker />
             <ThemeToggler />
             <button

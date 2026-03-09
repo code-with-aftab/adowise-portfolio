@@ -116,7 +116,7 @@ const ChatBot = () => {
                         initial={{ opacity: 0, y: 10, scale: 0.9 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.9 }}
-                        className={`mb-4 rounded-3xl ${isRTL ? 'rounded-bl-none' : 'rounded-br-none'} bg-white/70 dark:bg-black/40 backdrop-blur-xl p-4 text-gray-900 dark:text-gray-100 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] w-[220px] sm:w-64 cursor-pointer relative transition-all duration-300 border border-white/40 dark:border-gray-700/50 hover:shadow-[0_15px_45px_-10px_rgba(0,0,0,0.4)]`}
+                        className={`mb-4 rounded-3xl ${isRTL ? 'rounded-bl-none' : 'rounded-br-none'} bg-white/70 dark:bg-black/40 backdrop-blur-xl p-4 text-gray-900 dark:text-gray-100 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] w-[250px] md:w-[280px] cursor-pointer relative transition-all duration-300 border border-white/40 dark:border-gray-700/50 hover:shadow-[0_15px_45px_-10px_rgba(0,0,0,0.4)]`}
                         onClick={() => {
                             setIsOpen(true);
                             setShowGreeting(false);
@@ -152,7 +152,7 @@ const ChatBot = () => {
                         initial={{ opacity: 0, y: 20, scale: 0.9 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 20, scale: 0.9 }}
-                        className={`mb-4 w-[350px] max-w-[calc(100vw-40px)] overflow-hidden rounded-[2rem] bg-white/80 dark:bg-gray-dark/80 backdrop-blur-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-white/50 dark:border-gray-800/50 flex flex-col h-[440px] max-h-[70vh] max-md:fixed max-md:bottom-24 max-md:left-0 max-md:right-0 max-md:mx-auto ${isRTL ? 'md:items-start' : 'md:items-end'}`}
+                        className={`mb-4 w-[350px] max-w-[calc(100vw-40px)] overflow-hidden rounded-[2rem] bg-white/80 dark:bg-gray-dark/80 backdrop-blur-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-white/50 dark:border-gray-800/50 flex flex-col h-[440px] max-h-[70vh] max-md:fixed max-md:bottom-24 max-md:left-0 max-md:right-0 max-md:mx-auto`}
                     >
                         {/* Header */}
                         <div className="bg-[#ACBBFB] p-4 flex justify-between items-center text-gray-900 border-b border-[#ACBBFB]/80">
@@ -183,7 +183,7 @@ const ChatBot = () => {
                             data-lenis-prevent
                         >
                             {messages.map((msg, idx) => (
-                                <div key={idx} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
+                                <div key={idx} className={`flex w-full ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
                                     <div className={`max-w-[85%] rounded-[1.5rem] px-4 py-2.5 text-[13px] leading-relaxed shadow-sm border transition-all duration-300 break-words ${msg.role === "user"
                                         ? "bg-gradient-to-br from-[#ACBBFB] to-[#8da0f8] text-gray-900 font-medium rounded-br-none border-white/40 whitespace-pre-wrap"
                                         : "bg-white/90 dark:bg-gray-800/90 text-gray-800 dark:text-gray-100 rounded-bl-none border-white/60 dark:border-gray-700/60 backdrop-blur-sm shadow-md markdown-content"
@@ -282,7 +282,7 @@ const ChatBot = () => {
                     <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/50 to-transparent translate-y-full group-hover:translate-y-[-100%] transition-transform duration-1000"></div>
 
                     {/* Notification Dot */}
-                    {showGreeting && <span className="absolute top-1 right-1 h-3.5 w-3.5 rounded-full bg-red-500 border-2 border-[#ACBBFB] z-10"></span>}
+                    {showGreeting && <span className={`absolute top-1 ${isRTL ? 'left-1' : 'right-1'} h-3.5 w-3.5 rounded-full bg-red-500 border-2 border-[#ACBBFB] z-10`}></span>}
 
                     <Sparkles
                         size={32}
