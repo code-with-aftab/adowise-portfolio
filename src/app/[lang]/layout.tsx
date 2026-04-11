@@ -112,55 +112,57 @@ export default async function LocaleLayout({
             __html: JSON.stringify([
               {
                 "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Mohammad Altaf",
+                "url": "https://www.linkedin.com/in/reachmohdaltaf/",
+                "image": "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs",
+                "jobTitle": "Founder & Full-Stack Developer",
+                "worksFor": {
+                  "@type": "Organization",
+                  "name": "Adowise"
+                },
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Paonta Sahib",
+                  "addressRegion": "Himachal Pradesh",
+                  "addressCountry": "IN"
+                },
+                "sameAs": [
+                  "https://www.linkedin.com/in/reachmohdaltaf/",
+                  "https://twitter.com/reachmohdaltaf",
+                  "https://github.com/reachmohdaltaf"
+                ],
+                "description": "Mohammad Altaf is a professional full-stack web developer and the founder of Adowise, specializing in real estate portals and SaaS solutions in Paonta Sahib, Himachal Pradesh."
+              },
+              {
+                "@context": "https://schema.org",
                 "@type": "Organization",
                 "name": "Adowise",
                 "alternateName": "Adowise IT Agency",
                 "url": baseUrl,
                 "logo": `${baseUrl}/adowise-logo.png`,
-                "image": `${baseUrl}/images/og-image.png`,
-                "description": "Adowise is a world-class IT agency specializing in Next.js development, AI SaaS products, and global digital transformation.",
+                "image": "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs",
+                "description": "Adowise, founded by Mohammad Altaf, is a world-class IT agency in Paonta Sahib specializing in custom web development.",
+                "founder": {
+                  "@type": "Person",
+                  "name": "Mohammad Altaf"
+                },
                 "address": {
                   "@type": "PostalAddress",
-                  "addressLocality": "Chandigarh",
-                  "addressRegion": "Chandigarh",
+                  "addressLocality": "Paonta Sahib",
+                  "addressRegion": "Himachal Pradesh",
                   "addressCountry": "IN"
-                },
-                "contactPoint": {
-                  "@type": "ContactPoint",
-                  "telephone": "+91-9882835865",
-                  "contactType": "customer service",
-                  "areaServed": "Worldwide",
-                  "availableLanguage": ["English", "Hindi", "Spanish", "French", "German", "Arabic", "Urdu"]
                 },
                 "sameAs": [
                   "https://www.linkedin.com/company/adowise",
-                  "https://twitter.com/adowise",
-                  "https://www.facebook.com/adowise",
-                  "https://www.instagram.com/adowise"
+                  "https://twitter.com/adowise"
                 ]
               },
               {
                 "@context": "https://schema.org",
                 "@type": "WebSite",
-                "name": "Adowise",
-                "url": baseUrl,
-                "potentialAction": {
-                  "@type": "SearchAction",
-                  "target": `${baseUrl}/search?q={search_term_string}`,
-                  "query-input": "required name=search_term_string"
-                }
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "SoftwareApplication",
-                "name": "Moltbot",
-                "applicationCategory": "BusinessApplication",
-                "operatingSystem": "Web",
-                "offers": {
-                  "@type": "Offer",
-                  "price": "0",
-                  "priceCurrency": "USD"
-                }
+                "name": "Adowise - Mohammad Altaf",
+                "url": baseUrl
               }
             ])
           }}

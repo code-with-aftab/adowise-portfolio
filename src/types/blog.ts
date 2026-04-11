@@ -6,6 +6,7 @@ type Author = {
 
 export interface Blog {
   id: number;
+  _id?: string;
   title: string;
   paragraph: string;
   image: string;

@@ -3,7 +3,7 @@ import SharePost from "@/components/Blog/SharePost";
 import TagButton from "@/components/Blog/TagButton";
 import Image from "next/image";
 import { Metadata } from "next";
-import blogData from "@/components/Blog/blogData";
+import { getAllBlogs, getBlogById } from "@/lib/markdown";
 
 export async function generateMetadata({
   params,
@@ -11,24 +11,23 @@ export async function generateMetadata({
   params: Promise<{ id: string }>;
 }): Promise<Metadata> {
   const resolvedParams = await params;
-  const id = parseInt(resolvedParams.id);
-  const blog = blogData.find((item) => item.id === id);
+  const blog = getBlogById(resolvedParams.id);
 
   if (!blog) {
     return {
-      title: "Blog Not Found | Startup Nextjs Template",
+      title: "Blog Not Found | Adowise",
       description: "The requested blog post could not be found.",
     };
   }
 
   // Construct absolute URL for images
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://adowise.com';
   const imageUrl = blog.image.startsWith('http')
     ? blog.image
     : `${siteUrl}${blog.image}`;
 
   return {
-    title: `${blog.title} | Startup Nextjs Template`,
+    title: `${blog.title} | Adowise`,
     description: blog.paragraph,
     keywords: blog.tags.join(', '),
     authors: [{ name: blog.author.name }],
@@ -36,7 +35,7 @@ export async function generateMetadata({
       title: blog.title,
       description: blog.paragraph,
       url: `${siteUrl}/blog/${blog.id}`,
-      siteName: "Startup Nextjs Template",
+      siteName: "Adowise",
       images: [
         {
           url: imageUrl,
@@ -55,7 +54,7 @@ export async function generateMetadata({
       title: blog.title,
       description: blog.paragraph,
       images: [imageUrl],
-      creator: "@yourusername",
+      creator: "@reachmohdaltaf",
     },
     robots: {
       index: true,
@@ -72,15 +71,15 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  return blogData.map((blog) => ({
+  const blogs = getAllBlogs();
+  return blogs.map((blog) => ({
     id: blog.id.toString(),
   }));
 }
 
 const BlogDetailsPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   const resolvedParams = await params;
-  const id = parseInt(resolvedParams.id);
-  const blog = blogData.find((item) => item.id === id);
+  const blog = getBlogById(resolvedParams.id);
 
   if (!blog) {
     return (
@@ -213,7 +212,7 @@ const BlogDetailsPage = async ({ params }: { params: Promise<{ id: string }> }) 
                         Popular Tags :
                       </h4>
                       <div className="flex items-center">
-                        {blog.tags.map((tag, index) => (
+                        {blog.tags.map((tag: string, index: number) => (
                           <TagButton key={index} text={tag} />
                         ))}
                       </div>

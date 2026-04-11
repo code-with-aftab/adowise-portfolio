@@ -3,10 +3,9 @@
 import { useEffect, useState } from "react";
 import SectionTitle from "../Common/SectionTitle";
 import SingleBlog from "./SingleBlog";
-import blogDataStatic from "./blogData";
 
-const Blog = ({ messages }: { messages: any }) => {
-  const [blogs, setBlogs] = useState<any[]>(blogDataStatic);
+const Blog = ({ messages, initialBlogs = [], limit }: { messages: any, initialBlogs?: any[], limit?: number }) => {
+  const [blogs, setBlogs] = useState<any[]>(initialBlogs);
   const t = messages?.Blog || {};
 
   useEffect(() => {
@@ -24,8 +23,12 @@ const Blog = ({ messages }: { messages: any }) => {
         console.error("Failed to fetch dynamic blogs", err);
       }
     };
-    fetchBlogs();
-  }, []);
+    if (initialBlogs.length === 0) {
+      fetchBlogs();
+    }
+  }, [initialBlogs.length]);
+
+  const displayedBlogs = limit && limit > 0 ? blogs.slice(0, limit) : blogs;
 
   return (
     <section
@@ -40,7 +43,7 @@ const Blog = ({ messages }: { messages: any }) => {
         />
 
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-3">
-          {blogs.map((blog) => (
+          {displayedBlogs.map((blog) => (
             <div key={blog._id || blog.id} className="w-full">
               <SingleBlog blog={blog} />
             </div>

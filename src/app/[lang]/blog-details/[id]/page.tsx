@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import SharePost from "@/components/Blog/SharePost";
 import TagButton from "@/components/Blog/TagButton";
 import Image from "next/image";
-import blogDataStatic from "@/components/Blog/blogData";
 import { Loader2 } from "lucide-react";
 
 const BlogDetailsPage = ({ params }: { params: Promise<{ id: string }> }) => {
@@ -24,18 +23,22 @@ const BlogDetailsPage = ({ params }: { params: Promise<{ id: string }> }) => {
     if (!id) return;
 
     const fetchBlog = async () => {
-      // Check if it's a numeric ID (static)
-      const numericId = parseInt(id);
-      if (!isNaN(numericId) && id.length < 5) {
-        const staticBlog = blogDataStatic.find((item) => item.id === numericId);
-        if (staticBlog) {
-          setBlog(staticBlog);
-          setLoading(false);
-          return;
+      // Fetch from markdown API
+      try {
+        const res = await fetch(`/api/blogs/md?id=${id}`);
+        if (res.ok) {
+          const data = await res.json();
+          if (data) {
+            setBlog(data);
+            setLoading(false);
+            return;
+          }
         }
+      } catch (err) {
+        console.error("Failed to fetch blog from markdown", err);
       }
 
-      // Fetch from API
+      // Fallback: Fetch from admin API
       try {
         const res = await fetch("/api/admin/blogs");
         if (res.ok) {

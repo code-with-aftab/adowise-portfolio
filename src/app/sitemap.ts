@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import blogData from "@/components/Blog/blogData";
+import { getAllBlogs } from "@/lib/markdown";
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = "https://adowise.com";
@@ -26,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     );
 
     const blogRoutes = locales.flatMap((lang) =>
-        blogData.map((blog) => ({
+        getAllBlogs().map((blog) => ({
             url: `${baseUrl}/${lang}/blog/${blog.id}`,
             lastModified: new Date(),
             changeFrequency: 'weekly' as const,

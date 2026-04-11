@@ -1,6 +1,7 @@
 import Blog from "@/components/Blog";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import { getMessages } from "@/lib/i18n";
+import { getAllBlogs } from "@/lib/markdown";
 
 import { Metadata } from "next";
 
@@ -32,6 +33,9 @@ const BlogPage = async ({ params }: { params: Promise<{ lang: string }> }) => {
     const breadcrumbs = messages.Breadcrumbs || {};
     const t = messages.Blog || {};
 
+    // Load blogs from markdown files
+    const blogs = getAllBlogs();
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -61,7 +65,7 @@ const BlogPage = async ({ params }: { params: Promise<{ lang: string }> }) => {
                 pageName={t.title || "Blog"}
                 description={t.subtitle || "Explore our latest thoughts, ideas, and insights."}
             />
-            <Blog messages={messages} />
+            <Blog messages={messages} initialBlogs={blogs} />
         </>
     );
 };

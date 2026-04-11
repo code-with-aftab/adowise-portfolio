@@ -60,7 +60,7 @@ export default function Home({ params }: { params: any }) {
       <Testimonials messages={messages} />
       <Founders messages={messages} />
       <Contact messages={messages} />
-      <Blog messages={messages} />
+      <Blog messages={messages} limit={3} />
       <FAQ messages={messages} />
 
       {/* AI Chat Bot */}
