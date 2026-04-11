@@ -9,7 +9,7 @@ const SingleFeature = ({ feature, messages }: { feature: Feature; messages: any 
   const localizedParagraph = t[`feature${id}_desc`] || paragraph;
 
   return (
-    <div className="w-full  md:max-w-[370px]">
+    <div className="w-full mx-auto md:max-w-[370px]">
       <div
         className="
     h-full w-full

@@ -38,11 +38,24 @@ const Founders = ({ messages }: { messages?: any }) => {
       },
     },
     {
+      id: 3,
+      name: "Mohd Mahtab",
+      role: "Co-founder",
+      image: "https://media.licdn.com/dms/image/v2/D5603AQG9yUH4Ns0yWw/profile-displayphoto-scale_400_400/B56ZzZvS5eGkAg-/0/1773179580705?e=1777507200&v=beta&t=zuOTDE8J2ZGEVf1X1EPeCNs1c_YnLCr_WZSutB_12hs",
+      bio: t.founder3_bio || "Mahtab brings strategic vision and business acumen to Adowise, helping shape the company's direction and growth across key markets.",
+      portfolio: "https://mohammadmahtab.dev",
+      imageClassName: "object-top",
+      social: {
+        linkedin: "https://linkedin.com/in/mohd-mahtab",
+        twitter: "https://x.com/codewithmahtab",
+      },
+    },
+    {
       id: 2,
       name: "Mohd Aftab",
-      role: "Co-founder & CTO",
+      role: "Product Manager",
       image: "/images/aftab.jpg",
-      bio: t.founder2_bio || "Aftab is a tech enthusiast and full-stack developer. He leads the product and engineering teams ensuring top-notch quality and innovation.",
+      bio: t.founder2_bio || "Aftab is a dedicated Product Manager. He leads the product strategy and cross-functional teams, ensuring top-notch quality, user satisfaction, and innovation.",
       portfolio: "https://aftab.adowise.com",
       social: {
         linkedin: "https://linkedin.com/in/aftab",
@@ -74,13 +87,13 @@ const Founders = ({ messages }: { messages?: any }) => {
   }, []);
 
   const FounderCard = ({ founder }: { founder: Founder }) => (
-    <div className="w-full px-4 md:w-1/2">
-      <div className="group relative mb-10 overflow-hidden rounded-2xl bg-gray-200 dark:bg-gray-900/70 border border-white/20 dark:border-white/30 backdrop-blur-xl p-8 hover:bg-gray/20 dark:hover:bg-gray-700/70 hover:border-white/30 dark:hover:border-white/50 hover:-translate-y-2 transition-all duration-500">
+    <div className="w-full px-4 md:w-1/2 lg:w-1/3 flex">
+      <div className="group relative mb-10 w-full flex flex-col overflow-hidden rounded-2xl bg-gray-200 dark:bg-gray-900/70 border border-white/20 dark:border-white/30 backdrop-blur-xl p-8 hover:bg-gray/20 dark:hover:bg-gray-700/70 hover:border-white/30 dark:hover:border-white/50 hover:-translate-y-2 transition-all duration-500">
         {/* Gradient overlay for premium effect matching Features card */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#A9B9FB]/40 to-[#5E7CF7]/40 dark:from-white/10 dark:via-transparent dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"></div>
 
         {/* Glassmorphism content wrapper */}
-        <div className="relative z-10 w-full">
+        <div className="relative z-10 w-full flex flex-col flex-grow">
 
           {/* Profile Image with glow effect */}
           <div className="relative mx-auto mb-6 h-40 w-40">
@@ -102,7 +115,7 @@ const Founders = ({ messages }: { messages?: any }) => {
           </div>
 
           {/* Content */}
-          <div className="relative">
+          <div className="relative flex flex-col flex-grow">
             <h4 className="mb-2 pt-4 text-xl font-bold text-gray-900 dark:text-white md:text-2xl">
               {founder.name}
             </h4>
@@ -111,7 +124,7 @@ const Founders = ({ messages }: { messages?: any }) => {
               {founder.role}
             </p>
 
-            <p className="mb-6 text-gray-700 dark:text-gray-300">
+            <p className="mb-6 text-gray-700 dark:text-gray-300 flex-grow">
               {founder.bio}
             </p>
 

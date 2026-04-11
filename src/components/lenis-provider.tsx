@@ -7,12 +7,12 @@ export default function LenisProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const lenis = new Lenis({
       // ONLY valid properties in new version
-      duration: 1.2,
-      lerp: 0.1, // smoothness
+      duration: 0.4,
+      lerp: 0.3, // smoothness
       orientation: "vertical",
       gestureOrientation: "vertical",
-      wheelMultiplier: 1,
-      touchMultiplier: 1.5,
+      wheelMultiplier: 2.5,
+      touchMultiplier: 3,
     });
 
     function raf(time: number) {

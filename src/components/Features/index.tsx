@@ -14,7 +14,7 @@ const Features = ({ messages }: { messages: any }) => {
             center
           />
 
-          <div className="grid grid-cols-1 pt-8 gap-x-8 gap-y-3 md:gap-y-10 md:grid-cols-2 lg:grid-cols-3 items-stretch">
+          <div className="grid grid-cols-1 pt-8 gap-x-8 gap-y-3 md:gap-y-10 md:grid-cols-2 lg:grid-cols-3 items-stretch justify-center justify-items-center">
             {featuresData.map((feature) => (
               <SingleFeature key={feature.id} feature={feature} messages={messages} />
             ))}
