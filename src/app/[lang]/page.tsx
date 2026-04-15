@@ -15,6 +15,7 @@ import FAQ from "@/components/FAQ";
 import ChatBot from "@/components/ChatBot";
 import Loader from "@/components/Common/Loader";
 import Pricing from "@/components/Pricing";
+import OfferPopup from "@/components/OfferPopup";
 
 export default function Home({ params }: { params: any }) {
   const [settings, setSettings] = useState<any>({});
@@ -49,6 +50,7 @@ export default function Home({ params }: { params: any }) {
   return (
     <>
       <ScrollUp />
+      <OfferPopup />
       <Hero
         messages={messages}
         title={t.hero_title}
