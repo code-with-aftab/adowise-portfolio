@@ -9,6 +9,7 @@ import Script from "next/script";
 const Pricing = ({ messages }: { messages?: any }) => {
   const t = messages?.Pricing || {};
   const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
+  const [loadingAdvance, setLoadingAdvance] = useState<string | null>(null);
 
   const plans = [
     {
@@ -81,26 +82,31 @@ const Pricing = ({ messages }: { messages?: any }) => {
     },
   ];
 
-  const handlePayment = async (amount: number, planName: string) => {
-    setLoadingPlan(planName);
-    
+  const openRazorpay = async (
+    amount: number,
+    description: string,
+    isAdvance: boolean,
+    planName: string
+  ) => {
+    const setter = isAdvance ? setLoadingAdvance : setLoadingPlan;
+    setter(planName);
+
     try {
       const orderResponse = await fetch("/api/razorpay/order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ amount }),
       });
-      
+
       const orderData = await orderResponse.json();
-      
       if (!orderResponse.ok) throw new Error(orderData.error || "Failed to create order");
-      
+
       const options = {
         key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "rzp_live_SdqwY6SMbOGTV8",
         amount: orderData.amount,
         currency: orderData.currency,
         name: "Adowise",
-        description: planName,
+        description,
         order_id: orderData.id,
         handler: async function (response: any) {
           const verifyData = {
@@ -108,17 +114,19 @@ const Pricing = ({ messages }: { messages?: any }) => {
             razorpay_payment_id: response.razorpay_payment_id,
             razorpay_signature: response.razorpay_signature,
           };
-
           try {
             const verifyResponse = await fetch("/api/razorpay/verify", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(verifyData),
             });
-            
             const verifyResult = await verifyResponse.json();
             if (verifyResult.success) {
-              alert("Payment successful! Thank you for choosing Adowise.");
+              alert(
+                isAdvance
+                  ? "Advance payment successful! We will contact you to begin your project."
+                  : "Payment successful! Thank you for choosing Adowise."
+              );
             } else {
               alert("Payment verification failed. Please contact support.");
             }
@@ -127,31 +135,29 @@ const Pricing = ({ messages }: { messages?: any }) => {
             alert("Error verifying payment.");
           }
         },
-        prefill: {
-          name: "",
-          email: "",
-          contact: "",
-        },
-        theme: {
-          color: "#4A6CF7",
-        },
+        prefill: { name: "", email: "", contact: "" },
+        theme: { color: "#4A6CF7" },
       };
 
       const razorpay = new (window as any).Razorpay(options);
-      
       razorpay.on("payment.failed", function (response: any) {
         console.error("Payment failed", response.error);
         alert("Payment failed: " + response.error.description);
       });
-      
       razorpay.open();
     } catch (error) {
       console.error(error);
       alert("Something went wrong initializing the payment. Please try again.");
     } finally {
-      setLoadingPlan(null);
+      setter(null);
     }
   };
+
+  const handleFullPayment = (amount: number, planName: string) =>
+    openRazorpay(amount, planName, false, planName);
+
+  const handleAdvancePayment = (amount: number, planName: string) =>
+    openRazorpay(Math.ceil(amount / 2), `${planName} — 50% Advance`, true, planName);
 
   return (
     <section id="pricing" className="relative z-10 py-16 md:py-20 lg:py-28">
@@ -178,11 +184,27 @@ const Pricing = ({ messages }: { messages?: any }) => {
               <p className="text-body-color mb-3 text-sm leading-relaxed">{plan.description}</p>
               <p className="mb-6 text-sm font-semibold text-primary">{t.delivery || "Delivery"}: {plan.delivery}</p>
 
-              <div className="block mb-7 cursor-pointer" onClick={() => handlePayment(plan.numericPrice, plan.name)}>
+              {/* Full payment */}
+              <div
+                className="block mb-3 cursor-pointer"
+                onClick={() => handleFullPayment(plan.numericPrice, plan.name)}
+              >
                 <ShinyButton className="w-full border-primary/40 bg-primary/5 text-center">
                   {loadingPlan === plan.name ? "Processing..." : plan.cta}
                 </ShinyButton>
               </div>
+
+              {/* Advance payment */}
+              <button
+                onClick={() => handleAdvancePayment(plan.numericPrice, plan.name)}
+                disabled={loadingAdvance === plan.name}
+                className="mb-7 w-full rounded-xs border border-primary/40 py-3 px-4 text-sm font-semibold text-primary transition-all duration-200 hover:bg-primary/10 disabled:opacity-60 cursor-pointer"
+              >
+                {loadingAdvance === plan.name
+                  ? "Processing..."
+                  : `Pay 50% Advance — ${plan.price.replace("₹", "₹").split(",").join(",").replace(/[0-9,]+/, (n) => String(Math.ceil(Number(n.replace(/,/g, "")) / 2).toLocaleString("en-IN")))}`
+                }
+              </button>
 
               <ul className="space-y-3">
                 {plan.features.map((feature) => (
