@@ -1,17 +1,20 @@
 "use client";
 
+import { useState } from "react";
 import SectionTitle from "../Common/SectionTitle";
 import { ShinyButton } from "../ui/shiny-button";
 import { Check } from "lucide-react";
-import Link from "next/link";
+import Script from "next/script";
 
 const Pricing = ({ messages }: { messages?: any }) => {
   const t = messages?.Pricing || {};
+  const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
 
   const plans = [
     {
       name: t.basic_name || "Basic Website Plan",
       price: "₹8,000",
+      numericPrice: 8000,
       period: "one-time",
       description: t.basic_desc || "Up to 5 pages for startups and local businesses that need a clean, responsive website fast.",
       delivery: "3–5 working days",
@@ -31,6 +34,7 @@ const Pricing = ({ messages }: { messages?: any }) => {
     {
       name: t.business_name || "Business Website Plan",
       price: "₹15,000",
+      numericPrice: 15000,
       period: "one-time",
       description: t.business_desc || "For growing businesses that need custom presentation, editable content, and stronger conversion structure.",
       delivery: "5–7 working days",
@@ -52,6 +56,7 @@ const Pricing = ({ messages }: { messages?: any }) => {
     {
       name: t.custom_name || "Fully Custom Enterprise Plan",
       price: "₹22,000",
+      numericPrice: 22000,
       period: "one-time",
       description: t.custom_desc || "A fully customized, professional website or web application tailored specifically to your exact business requirements.",
       delivery: "7–10 working days",
@@ -76,8 +81,81 @@ const Pricing = ({ messages }: { messages?: any }) => {
     },
   ];
 
+  const handlePayment = async (amount: number, planName: string) => {
+    setLoadingPlan(planName);
+    
+    try {
+      const orderResponse = await fetch("/api/razorpay/order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ amount }),
+      });
+      
+      const orderData = await orderResponse.json();
+      
+      if (!orderResponse.ok) throw new Error(orderData.error || "Failed to create order");
+      
+      const options = {
+        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "rzp_live_SdqwY6SMbOGTV8",
+        amount: orderData.amount,
+        currency: orderData.currency,
+        name: "Adowise",
+        description: planName,
+        order_id: orderData.id,
+        handler: async function (response: any) {
+          const verifyData = {
+            razorpay_order_id: response.razorpay_order_id,
+            razorpay_payment_id: response.razorpay_payment_id,
+            razorpay_signature: response.razorpay_signature,
+          };
+
+          try {
+            const verifyResponse = await fetch("/api/razorpay/verify", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(verifyData),
+            });
+            
+            const verifyResult = await verifyResponse.json();
+            if (verifyResult.success) {
+              alert("Payment successful! Thank you for choosing Adowise.");
+            } else {
+              alert("Payment verification failed. Please contact support.");
+            }
+          } catch (err) {
+            console.error("Verification error", err);
+            alert("Error verifying payment.");
+          }
+        },
+        prefill: {
+          name: "",
+          email: "",
+          contact: "",
+        },
+        theme: {
+          color: "#4A6CF7",
+        },
+      };
+
+      const razorpay = new (window as any).Razorpay(options);
+      
+      razorpay.on("payment.failed", function (response: any) {
+        console.error("Payment failed", response.error);
+        alert("Payment failed: " + response.error.description);
+      });
+      
+      razorpay.open();
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong initializing the payment. Please try again.");
+    } finally {
+      setLoadingPlan(null);
+    }
+  };
+
   return (
     <section id="pricing" className="relative z-10 py-16 md:py-20 lg:py-28">
+      <Script src="https://checkout.razorpay.com/v1/checkout.js" />
       <div className="container">
         <div className="grid items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
           {plans.map((plan) => (
@@ -100,11 +178,11 @@ const Pricing = ({ messages }: { messages?: any }) => {
               <p className="text-body-color mb-3 text-sm leading-relaxed">{plan.description}</p>
               <p className="mb-6 text-sm font-semibold text-primary">{t.delivery || "Delivery"}: {plan.delivery}</p>
 
-              <Link href={`/contact?plan=${encodeURIComponent(plan.name)}`} className="block mb-7">
+              <div className="block mb-7 cursor-pointer" onClick={() => handlePayment(plan.numericPrice, plan.name)}>
                 <ShinyButton className="w-full border-primary/40 bg-primary/5 text-center">
-                  {plan.cta}
+                  {loadingPlan === plan.name ? "Processing..." : plan.cta}
                 </ShinyButton>
-              </Link>
+              </div>
 
               <ul className="space-y-3">
                 {plan.features.map((feature) => (
@@ -128,3 +206,4 @@ const Pricing = ({ messages }: { messages?: any }) => {
 };
 
 export default Pricing;
+
