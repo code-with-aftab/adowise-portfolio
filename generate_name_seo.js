@@ -38,9 +38,9 @@ locations.forEach(location => {
 id: ${id}
 title: "${title} | Adowise Experts"
 paragraph: "${description}"
-image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?bg=slate-900&auto=format&fit=crop&w=1200&q=80"
+image: "/mohd-altaf.png"
 authorName: "Adowise Editorial"
-authorImage: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs"
+authorImage: "/mohd-altaf.png"
 authorDesignation: "Technical Insights Team"
 tags: ["mohammad-altaf", "seo", "expertise", "${location.toLowerCase().replace(/ /g, '-')}"]
 publishDate: "2026"

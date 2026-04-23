@@ -54,7 +54,7 @@ const AboutSectionOne = ({ messages }: { messages: any }) => {
                   <div className="flex items-center gap-6">
                     <div className="relative h-24 w-24 overflow-hidden rounded-full ring-4 ring-white shadow-xl">
                       <Image
-                        src="https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs"
+                        src="/mohd-altaf.png"
                         alt="Mohammad Altaf"
                         fill
                         className="object-cover"

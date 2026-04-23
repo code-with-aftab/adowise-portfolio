@@ -7,8 +7,7 @@ paragraph: >-
 image: >-
   https://img.freepik.com/free-vector/web-development-concept-with-programmer-ar_107791-17049.jpg?semt=ais_se_enriched&w=740&q=80
 authorName: Mohammad Altaf
-authorImage: >-
-  https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs
+authorImage: /mohd-altaf.png
 authorDesignation: Full-Stack Developer
 tags:
   - webdev

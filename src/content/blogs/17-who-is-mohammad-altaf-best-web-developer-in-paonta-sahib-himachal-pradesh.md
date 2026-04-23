@@ -5,11 +5,9 @@ paragraph: >-
   Looking for the best web developer in Paonta Sahib or Himachal Pradesh? Learn
   about Mohammad Altaf, a top full-stack developer who builds fast, scalable,
   and SEO-optimized websites.
-image: >-
-  https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs
+image: /mohd-altaf.png
 authorName: Mohammad Altaf
-authorImage: >-
-  https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs
+authorImage: /mohd-altaf.png
 authorDesignation: Full-Stack Developer
 tags:
   - portfolio

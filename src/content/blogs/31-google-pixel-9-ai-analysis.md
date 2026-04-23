@@ -6,8 +6,7 @@ paragraph: >-
   and are the AI features like 'Add Me' still revolutionary?
 image: 'https://fdn2.gsmarena.com/vv/bigpic/google-pixel-8-pro.jpg'
 authorName: Sophia Martinez
-authorImage: >-
-  https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7mtmYDiJadvEoZs
+authorImage: /mohd-altaf.png
 authorDesignation: Tech Reviewer
 tags:
   - google-pixel-9

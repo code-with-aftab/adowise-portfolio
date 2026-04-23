@@ -43,7 +43,7 @@ title: "${title}"
 paragraph: "Modernize your clinic or hospital with secure, HIPAA-compliant digital solutions. Hire the best ${niche.toLowerCase()} near you in ${location}."
 image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80"
 authorName: "Mohammad Altaf"
-authorImage: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs"
+authorImage: "/mohd-altaf.png"
 authorDesignation: "Health-Tech Solutions Lead"
 tags: ["healthcare-software-developer", "medical-web-design", "${location.toLowerCase().replace(/ /g, '-')}", "adowise-health"]
 publishDate: "2026"

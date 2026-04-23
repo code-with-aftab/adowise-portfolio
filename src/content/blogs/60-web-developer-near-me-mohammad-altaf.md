@@ -5,11 +5,9 @@ paragraph: >-
   Looking for the 'best web developer near me'? Mohammad Altaf at Adowise
   provides top-tier web development, AI integration, and SEO services in Paonta
   Sahib, Himachal Pradesh.
-image: >-
-  https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs
+image: /mohd-altaf.png
 authorName: Adowise Local Search
-authorImage: >-
-  https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs
+authorImage: /mohd-altaf.png
 authorDesignation: Local SEO Expert
 tags:
   - web-developer-near-me

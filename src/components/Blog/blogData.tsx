@@ -9,7 +9,7 @@ const blogData: Blog[] = [
     image: "https://img.freepik.com/free-vector/web-development-concept-with-programmer-ar_107791-17049.jpg?semt=ais_se_enriched&w=740&q=80",
     author: {
       name: "Mahtab",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       designation: "Web Developer",
     },
     tags: ["webdev", "learning"],
@@ -89,7 +89,7 @@ const blogData: Blog[] = [
     image: "/adowise-logo.png",
     author: {
       name: "Alex Chen",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       designation: "AI Engineer",
     },
     tags: ["ai", "fullstack", "innovation"],
@@ -111,7 +111,7 @@ const blogData: Blog[] = [
     image: "/adowise-logo.png",
     author: {
       name: "Sarah Johnson",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7mtmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       designation: "Senior React Developer",
     },
     tags: ["react", "performance", "optimization"],
@@ -133,7 +133,7 @@ const blogData: Blog[] = [
     image: "/adowise-logo.png",
     author: {
       name: "Michael Rodriguez",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7mtmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       designation: "Cloud Architect",
     },
     tags: ["backend", "serverless", "cloud"],
@@ -155,7 +155,7 @@ const blogData: Blog[] = [
     image: "/adowise-logo.png",
     author: {
       name: "David Kim",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7mtmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       designation: "TypeScript Expert",
     },
     tags: ["typescript", "advanced", "enterprise"],
@@ -177,7 +177,7 @@ const blogData: Blog[] = [
     image: "/adowise-logo.png",
     author: {
       name: "Emma Watson",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7mtmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       designation: "Web Platform Advocate",
     },
     tags: ["webassembly", "future", "performance"],
@@ -199,7 +199,7 @@ const blogData: Blog[] = [
     image: "/adowise-logo.png",
     author: {
       name: "Lisa Park",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7mtmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       designation: "Accessibility Specialist",
     },
     tags: ["accessibility", "inclusive", "best-practices"],
@@ -221,7 +221,7 @@ const blogData: Blog[] = [
     image: "/adowise-logo.png",
     author: {
       name: "Tom Wilson",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7mtmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       designation: "DevOps Engineer",
     },
     tags: ["monorepo", "devops", "productivity"],
@@ -243,7 +243,7 @@ const blogData: Blog[] = [
     image: "/adowise-logo.png",
     author: {
       name: "Robert Chen",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7mtmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       designation: "Frontend Architect",
     },
     tags: ["state-management", "react", "modern"],
@@ -265,7 +265,7 @@ const blogData: Blog[] = [
     image: "/adowise-logo.png",
     author: {
       name: "Sophia Martinez",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7mtmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       designation: "Tech Lead",
     },
     tags: ["career", "growth", "soft-skills"],
@@ -287,7 +287,7 @@ const blogData: Blog[] = [
     image: "https://img.freepik.com/free-vector/ai-technology-concept-illustration_114360-123.jpg",
     author: {
       name: "Adowise Labs",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       designation: "AI Strategist",
     },
     tags: ["agentic-ai", "automation", "claude"],
@@ -355,7 +355,7 @@ const blogData: Blog[] = [
     image: "https://img.freepik.com/free-vector/digital-economy-concept-illustration_114360-1236.jpg",
     author: {
       name: "FinTech Hub",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       designation: "Finance Expert",
     },
     tags: ["defi", "finance", "crypto"],
@@ -374,10 +374,10 @@ const blogData: Blog[] = [
     title: "Who is Mohammad Altaf? \u2013 Best Web Developer in Paonta Sahib, Himachal Pradesh",
     paragraph:
       "Looking for the best web developer in Paonta Sahib or Himachal Pradesh? Learn about Mohammad Altaf, a top full-stack developer who builds fast, scalable, and SEO-optimized websites.",
-    image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs",
+    image: "/mohd-altaf.png",
     author: {
       name: "Mohammad Altaf",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       designation: "Full-Stack Developer",
     },
     tags: ["portfolio", "seo", "webdev"],
@@ -424,7 +424,7 @@ const blogData: Blog[] = [
     image: "/adowise-logo.png",
     author: {
       name: "Mohammad Altaf",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       designation: "Full-Stack Developer",
     },
     tags: ["realestate", "paontasahib", "webdev"],
@@ -453,7 +453,7 @@ const blogData: Blog[] = [
     image: "/adowise-logo.png",
     author: {
       name: "Mohammad Altaf",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       designation: "Full-Stack Developer",
     },
     tags: ["realestate", "himachal", "branding"],
@@ -486,7 +486,7 @@ const blogData: Blog[] = [
     image: "/adowise-logo.png",
     author: {
       name: "Mohammad Altaf",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       designation: "Full-Stack Developer",
     },
     tags: ["tech", "realestate", "ai"],
@@ -520,7 +520,7 @@ const blogData: Blog[] = [
     image: "/adowise-logo.png",
     author: {
       name: "Mohammad Altaf",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       designation: "Full-Stack Developer",
     },
     tags: ["ecommerce", "paontasahib", "business"],
@@ -551,7 +551,7 @@ const blogData: Blog[] = [
     image: "/adowise-logo.png",
     author: {
       name: "Mohammad Altaf",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       designation: "Full-Stack Developer",
     },
     tags: ["pharma", "paontasahib", "industry"],
@@ -582,7 +582,7 @@ const blogData: Blog[] = [
     image: "/adowise-logo.png",
     author: {
       name: "Mohammad Altaf",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       designation: "Full-Stack Developer",
     },
     tags: ["localbusiness", "paontasahib", "digitalgrowth"],
@@ -616,7 +616,7 @@ const blogData: Blog[] = [
     image: "/adowise-logo.png",
     author: {
       name: "Mohammad Altaf",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       designation: "Full-Stack Developer",
     },
     tags: ["hospitality", "tourism", "paontasahib"],
@@ -648,7 +648,7 @@ const blogData: Blog[] = [
     image: "https://blog.google/static/blogv2/images/google-200x200.png",
     author: {
       name: "Adowise AI Team",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       designation: "AI Research",
     },
     tags: ["google-gemini", "nano-banana", "ai-editing"],
@@ -693,7 +693,7 @@ const blogData: Blog[] = [
     image: "https://blog.google/static/blogv2/images/google-200x200.png",
     author: {
       name: "Mohammad Altaf",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       designation: "Lead Developer",
     },
     tags: ["google-ai-studio", "vibe-coding", "antigravity"],
@@ -764,7 +764,7 @@ const blogData: Blog[] = [
     image: "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-a3.jpg",
     author: {
       name: "FinTech Hub",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       designation: "Market Analyst",
     },
     tags: ["redmi-a7-pro-5g", "budget-5g", "xiaomi"],
@@ -833,7 +833,7 @@ const blogData: Blog[] = [
     image: "/adowise-logo.png",
     author: {
       name: "Adowise Labs",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       designation: "Tech Strategist",
     },
     tags: ["5g-india", "jio-5g", "airtel-5g"],
@@ -867,7 +867,7 @@ const blogData: Blog[] = [
     image: "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-8-pro.jpg",
     author: {
       name: "Sophia Martinez",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7mtmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       designation: "Tech Reviewer",
     },
     tags: ["google-pixel-9", "ai-phone", "pixel-review"],

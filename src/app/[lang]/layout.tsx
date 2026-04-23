@@ -124,7 +124,7 @@ export default async function LocaleLayout({
                 "@type": "Person",
                 "name": "Mohammad Altaf",
                 "url": "https://www.linkedin.com/in/reachmohdaltaf/",
-                "image": "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs",
+                "image": `${baseUrl}/mohd-altaf.png`,
                 "jobTitle": "Founder & Full-Stack Developer",
                 "worksFor": {
                   "@type": "Organization",
@@ -150,7 +150,7 @@ export default async function LocaleLayout({
                 "alternateName": "Adowise IT Agency",
                 "url": baseUrl,
                 "logo": `${baseUrl}/adowise-logo.png`,
-                "image": "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs",
+                "image": `${baseUrl}/mohd-altaf.png`,
                 "description": "Adowise, founded by Mohammad Altaf, is a world-class IT agency in Paonta Sahib specializing in custom web development.",
                 "founder": {
                   "@type": "Person",

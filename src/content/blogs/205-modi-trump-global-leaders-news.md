@@ -8,8 +8,7 @@ paragraph: >-
 image: >-
   https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=800&q=80
 authorName: Adowise Labs
-authorImage: >-
-  https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs
+authorImage: /mohd-altaf.png
 authorDesignation: Trend Specialist
 tags:
   - global-leaders

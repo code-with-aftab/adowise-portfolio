@@ -28,7 +28,7 @@ const Founders = ({ messages }: { messages?: any }) => {
       id: 1,
       name: "Mohd Altaf",
       role: "Founder & CEO",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs",
+      image: "/mohd-altaf.png",
       bio: t.founder1_bio || "Altaf is a visionary leader with over 6 years of experience in SaaS and web technologies. He focuses on building scalable and user-friendly platforms.",
       portfolio: "https://altaf.adowise.com",
       imageClassName: "object-top",
@@ -106,7 +106,7 @@ const Founders = ({ messages }: { messages?: any }) => {
             >
               <Image
                 src={founder.image}
-                alt={founder.name}
+                alt={`${founder.name} - ${founder.role} of Adowise`}
                 width={160}
                 height={160}
                 className={`h-full w-full object-cover ${founder.imageClassName || ""}`}

@@ -6,8 +6,7 @@ paragraph: >-
   Office into autonomous systems that act on your behalf.
 image: 'https://blog.google/static/blogv2/images/google-200x200.png'
 authorName: Adowise AI Team
-authorImage: >-
-  https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs
+authorImage: /mohd-altaf.png
 authorDesignation: AI Research
 tags:
   - agentic-ai

@@ -50,9 +50,9 @@ locations.forEach(location => {
 id: ${idCounter}
 title: "${title}"
 paragraph: "Need the best ${niche.toLowerCase()} near me in ${location}? Mohammad Altaf provides expert IT consultation, hardware repair, network setup, and technical troubleshooting."
-image: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs"
+image: "/mohd-altaf.png"
 authorName: "Mohammad Altaf"
-authorImage: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs"
+authorImage: "/mohd-altaf.png"
 authorDesignation: "Lead IT Expert"
 tags: ["it-expert-near-me", "computer-technician", "${location.toLowerCase().replace(/ /g, '-')}", "mohammad-altaf"]
 publishDate: "2026"

@@ -51,7 +51,7 @@ title: "${title}"
 paragraph: "Looking to buy, sell, or invest in real estate? Find the best ${niche.toLowerCase()} near me in ${location}. Mohammad Altaf provides transparent, expert property dealing services."
 image: "https://images.unsplash.com/photo-1560518884-ce5882228a96?auto=format&fit=crop&w=800&q=80"
 authorName: "Mohammad Altaf"
-authorImage: "https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs"
+authorImage: "/mohd-altaf.png"
 authorDesignation: "Lead Real Estate Specialist"
 tags: ["real-estate-agent", "property-dealer", "${location.toLowerCase().replace(/ /g, '-')}", "mohammad-altaf-properties"]
 publishDate: "2026"

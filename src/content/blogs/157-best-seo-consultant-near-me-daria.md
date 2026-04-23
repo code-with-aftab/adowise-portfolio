@@ -5,11 +5,9 @@ paragraph: >-
   Looking for the top seo consultant near me in Daria? Mohammad Altaf provides
   elite web design, custom software, and SEO dominance for the Chandigarh
   tricity region.
-image: >-
-  https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs
+image: /mohd-altaf.png
 authorName: Adowise Hyper-Local
-authorImage: >-
-  https://media.licdn.com/dms/image/v2/D5603AQH6vX8lVgE4Jw/profile-displayphoto-scale_400_400/B56ZzZfhRKIkAg-/0/1773175449229?e=1777507200&v=beta&t=CmuyLlecdwDn82EvkgqqbR80Fwyff7kmYDiJadvEoZs
+authorImage: /mohd-altaf.png
 authorDesignation: Tricity Business Specialist
 tags:
   - web-developer-near-me
