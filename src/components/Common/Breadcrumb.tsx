@@ -4,13 +4,40 @@ const Breadcrumb = ({
   pageName,
   description,
   lang = "en",
+  slug,
 }: {
   pageName: string;
   description: string;
   lang?: string;
+  slug?: string;
 }) => {
+  const baseUrl = "https://adowise.com";
+  
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": `${baseUrl}/${lang}`
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": pageName,
+        "item": `${baseUrl}/${lang}/${slug || pageName.toLowerCase().replace(/\s+/g, '-')}`
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <section className="relative z-10 overflow-hidden pt-28 lg:pt-[150px]">
         <div className="container">
           <div className="-mx-4 flex flex-wrap items-center">

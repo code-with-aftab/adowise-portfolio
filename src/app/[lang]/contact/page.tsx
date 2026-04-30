@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const t = messages.Contact;
 
   return {
-    title: `Contact Us | ${t.title}`,
+    title: t.title,
     description: t.subtitle,
   };
 }
@@ -25,6 +25,7 @@ const ContactPage = async ({ params }: { params: Promise<{ lang: string }> }) =>
         pageName={t.title}
         description={t.subtitle}
         lang={lang}
+        slug="contact"
       />
       <Contact messages={messages} />
     </>

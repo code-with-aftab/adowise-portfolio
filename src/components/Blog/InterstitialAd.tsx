@@ -13,11 +13,16 @@ export default function InterstitialAd() {
   const [lastPath, setLastPath] = useState(pathname);
 
   useEffect(() => {
+    // Only show once per user (ever)
+    const hasBeenShown = localStorage.getItem("interstitial_ad_shown");
+    if (hasBeenShown) return;
+
     // Only show if the path has actually changed (not on first mount or refresh)
     if (pathname !== lastPath) {
       setVisible(true);
       setCountdown(20);
       setLastPath(pathname);
+      localStorage.setItem("interstitial_ad_shown", "true");
     }
   }, [pathname, lastPath]);
 
@@ -47,7 +52,7 @@ export default function InterstitialAd() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-[10000] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+        className="fixed inset-0 z-[10000] bg-black flex items-center justify-center p-4"
       >
         <div className="relative w-full max-w-lg">
           {/* Close Button - Only visible when countdown is 0 */}

@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const t = messages.About;
 
   return {
-    title: `About Adowise | ${t.title}`,
+    title: t.title,
     description: t.paragraph,
   };
 }
@@ -27,6 +27,7 @@ const AboutPage = async ({ params }: { params: Promise<{ lang: string }> }) => {
         pageName={t.title}
         description={t.paragraph}
         lang={lang}
+        slug="about"
       />
       <AboutSectionOne messages={messages} />
       <AboutSectionTwo />

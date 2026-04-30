@@ -24,6 +24,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     authors: [{ name: "Adowise Team", url: baseUrl }],
     creator: "Adowise",
     publisher: "Adowise",
+    applicationName: "Adowise",
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
+    },
     alternates: {
       canonical: `${baseUrl}/${lang}`,
       languages: {
@@ -57,7 +63,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       card: "summary_large_image",
       title: t.og_title || t.title,
       description: t.og_description || t.description,
-      images: ["/images/og-image.png"],
+      images: [`${baseUrl}/images/og-image.png`],
       creator: "@adowise",
     },
     verification: {
@@ -93,6 +99,87 @@ export default async function LocaleLayout({
 
   const isRTL = lang === "ar" || lang === "ur";
 
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${baseUrl}/#organization`,
+    "name": "Adowise",
+    "alternateName": "Adowise IT Agency",
+    "url": baseUrl,
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${baseUrl}/adowise-logo.png`,
+      "width": 512,
+      "height": 512
+    },
+    "image": `${baseUrl}/mohd-altaf.png`,
+    "description": "Adowise is a world-class IT agency specializing in custom web development, AI-driven solutions, and SaaS platforms.",
+    "founder": {
+      "@type": "Person",
+      "name": "Mohammad Altaf",
+      "sameAs": [
+        "https://www.linkedin.com/in/reachmohdaltaf/",
+        "https://twitter.com/reachmohdaltaf",
+        "https://github.com/reachmohdaltaf"
+      ]
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Paonta Sahib",
+      "addressRegion": "Himachal Pradesh",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "adowise.info@gmail.com",
+      "contactType": "customer service"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/adowise",
+      "https://twitter.com/adowise"
+    ]
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${baseUrl}/#website`,
+    "name": "Adowise",
+    "url": baseUrl,
+    "publisher": {
+      "@id": `${baseUrl}/#organization`
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": `${baseUrl}/${lang}/blog?q={search_term_string}`,
+      "query-input": "required name=search_term_string"
+    }
+  };
+
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mohammad Altaf",
+    "url": "https://www.linkedin.com/in/reachmohdaltaf/",
+    "image": `${baseUrl}/mohd-altaf.png`,
+    "jobTitle": "Founder & Full-Stack Developer",
+    "worksFor": {
+      "@id": `${baseUrl}/#organization`
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Paonta Sahib",
+      "addressRegion": "Himachal Pradesh",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/reachmohdaltaf/",
+      "https://twitter.com/reachmohdaltaf",
+      "https://github.com/reachmohdaltaf"
+    ],
+    "description": "Mohammad Altaf is a professional full-stack web developer and the founder of Adowise, specializing in real estate portals and SaaS solutions."
+  };
+
   return (
     <html suppressHydrationWarning lang={lang} dir={isRTL ? "rtl" : "ltr"}>
       <head>
@@ -118,62 +205,7 @@ export default async function LocaleLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify([
-              {
-                "@context": "https://schema.org",
-                "@type": "Person",
-                "name": "Mohammad Altaf",
-                "url": "https://www.linkedin.com/in/reachmohdaltaf/",
-                "image": `${baseUrl}/mohd-altaf.png`,
-                "jobTitle": "Founder & Full-Stack Developer",
-                "worksFor": {
-                  "@type": "Organization",
-                  "name": "Adowise"
-                },
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": "Paonta Sahib",
-                  "addressRegion": "Himachal Pradesh",
-                  "addressCountry": "IN"
-                },
-                "sameAs": [
-                  "https://www.linkedin.com/in/reachmohdaltaf/",
-                  "https://twitter.com/reachmohdaltaf",
-                  "https://github.com/reachmohdaltaf"
-                ],
-                "description": "Mohammad Altaf is a professional full-stack web developer and the founder of Adowise, specializing in real estate portals and SaaS solutions in Paonta Sahib, Himachal Pradesh."
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "Organization",
-                "name": "Adowise",
-                "alternateName": "Adowise IT Agency",
-                "url": baseUrl,
-                "logo": `${baseUrl}/adowise-logo.png`,
-                "image": `${baseUrl}/mohd-altaf.png`,
-                "description": "Adowise, founded by Mohammad Altaf, is a world-class IT agency in Paonta Sahib specializing in custom web development.",
-                "founder": {
-                  "@type": "Person",
-                  "name": "Mohammad Altaf"
-                },
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": "Paonta Sahib",
-                  "addressRegion": "Himachal Pradesh",
-                  "addressCountry": "IN"
-                },
-                "sameAs": [
-                  "https://www.linkedin.com/company/adowise",
-                  "https://twitter.com/adowise"
-                ]
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "WebSite",
-                "name": "Adowise - Mohammad Altaf",
-                "url": baseUrl
-              }
-            ])
+            __html: JSON.stringify([organizationSchema, websiteSchema, personSchema])
           }}
         />
       </head>

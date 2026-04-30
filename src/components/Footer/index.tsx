@@ -37,6 +37,7 @@ const Footer = ({ lang, messages }: { lang: string; messages: any }) => {
             <li><Link href={`/${lang}`} className="hover:text-white">Home</Link></li>
             <li><Link href={`/${lang}/blog`} className="hover:text-white">Blog</Link></li>
             <li><Link href={`/${lang}/about`} className="hover:text-white">About</Link></li>
+            <li><Link href={`/${lang}/careers`} className="hover:text-white">Careers</Link></li>
             <li><Link href={`/${lang}/contact`} className="hover:text-white">Contact</Link></li>
             <li><Link href={`/${lang}/pricing`} className="hover:text-white">Pricing</Link></li>
           </ul>

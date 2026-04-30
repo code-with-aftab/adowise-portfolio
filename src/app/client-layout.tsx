@@ -2,7 +2,6 @@
 
 import { Inter } from "next/font/google";
 import { usePathname } from "next/navigation";
-import LenisProvider from "@/components/lenis-provider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Providers } from "./providers";
@@ -26,10 +25,9 @@ export default function ClientLayout({
     const isAdminPath = pathname?.split("/").includes("admin");
 
     return (
-        <body className={`bg-[#FCFCFC] dark:bg-black ${inter.className}`}>
+        <body className={`bg-[#FCFCFC] dark:bg-black ${inter.className} overflow-x-hidden`}>
             <Providers>
-                <LenisProvider>
-                    <VisitorLogger lang={lang} />
+                <VisitorLogger lang={lang} />
                     {isAdminPath ? (
                         <div className="min-h-screen bg-[#020617]">
                             {children}
@@ -44,8 +42,7 @@ export default function ClientLayout({
                             <InterstitialAd />
                         </div>
                     )}
-                </LenisProvider>
-            </Providers>
+                </Providers>
         </body>
     );
 }

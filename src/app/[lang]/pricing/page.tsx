@@ -7,19 +7,17 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const messages = await getMessages(lang);
   const t = messages.Pricing || {};
-  const seo = messages.SEO || {};
 
   return {
-    title: t.title || "Pricing | Adowise - Affordable Web & SaaS Development",
-    description: t.subtitle || "Get transparent, competitive pricing for premium website development.",
-    keywords: seo.keywords || "web development pricing, affordable SaaS development, ecommerce website cost",
+    title: t.title,
+    description: t.subtitle,
     alternates: {
-      canonical: `https://adowise.in/${lang}/pricing`,
+      canonical: `https://adowise.com/${lang}/pricing`,
     },
     openGraph: {
       title: t.title,
       description: t.subtitle,
-      url: `https://adowise.in/${lang}/pricing`,
+      url: `https://adowise.com/${lang}/pricing`,
       type: "website",
     }
   };
@@ -29,36 +27,14 @@ const PricingPage = async ({ params }: { params: Promise<{ lang: string }> }) =>
   const { lang } = await params;
   const messages = await getMessages(lang);
   const t = messages.Pricing || {};
-  const breadcrumbs = messages.Breadcrumbs || {};
-
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": breadcrumbs.home || "Home",
-        "item": `https://adowise.in/${lang}`
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": breadcrumbs.pricing || "Pricing",
-        "item": `https://adowise.in/${lang}/pricing`
-      }
-    ]
-  };
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <Breadcrumb
-        pageName={t.title || "Pricing"}
-        description={t.subtitle || "Transparent website development pricing for startups, businesses, and ecommerce brands."}
+        pageName={t.title}
+        description={t.subtitle}
+        lang={lang}
+        slug="pricing"
       />
       <Pricing messages={messages} />
     </>

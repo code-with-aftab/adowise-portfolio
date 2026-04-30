@@ -95,7 +95,7 @@ const Header = ({ lang, messages }: { lang: string; messages: any }) => {
           </div>
 
           {/* NAVIGATION + DESKTOP ICONS */}
-          <div className="flex w-full items-center justify-between px-6">
+          <div className="flex w-full items-center justify-between px-6 gap-x-10">
             {/* NAV MENU */}
             <nav
               className={`navbar absolute ${lang === 'ar' || lang === 'ur' ? 'left-4' : 'right-4'} z-30 w-[250px] rounded border px-6 py-4 duration-300
@@ -113,7 +113,7 @@ const Header = ({ lang, messages }: { lang: string; messages: any }) => {
                   : ""
                 }`}
             >
-              <ul className="block lg:flex lg:space-x-12">
+              <ul className="block lg:flex lg:space-x-6">
                 {menuData.map((menuItem, index) => {
                   // Localize title if possible
                   const localizedTitle = t[menuItem.title.toLowerCase()] || menuItem.title;

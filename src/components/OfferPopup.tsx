@@ -13,7 +13,7 @@ export default function OfferPopup() {
     const timer = setTimeout(() => {
       setVisible(true);
       sessionStorage.setItem("offerPopupShown", "true");
-    }, 4000);
+    }, 1500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -29,21 +29,13 @@ export default function OfferPopup() {
       {visible && (
         <>
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={close}
-            className="fixed inset-0 z-[9998] bg-black/50 backdrop-blur-sm"
-          />
-
-          <motion.div
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 30, scale: 0.95 }}
+            exit={{ opacity: 0, y: 50, scale: 0.9 }}
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
-            className="fixed inset-0 z-[9999] flex items-center justify-center p-4 pointer-events-none"
+            className="fixed bottom-5 right-5 z-[9999] w-full max-w-[320px]"
           >
-            <div className="pointer-events-auto relative w-full max-w-xs rounded-2xl overflow-hidden bg-white dark:bg-gray-dark shadow-2xl">
+            <div className="relative w-full rounded-2xl overflow-hidden bg-white dark:bg-gray-dark shadow-[0_10px_50px_rgba(0,0,0,0.2)] border border-primary/10">
 
               {/* Header */}
               <div className="bg-primary px-6 py-5 text-center relative">
@@ -53,26 +45,22 @@ export default function OfferPopup() {
                 >
                   <X className="h-4 w-4" />
                 </button>
-                <p className="text-xs font-semibold uppercase tracking-widest text-white/70 mb-1">Special Offer</p>
-                <h2 className="text-4xl font-black text-white">20% OFF</h2>
-                <p className="mt-1 text-sm text-white/80 font-medium">On all website plans</p>
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-white/70 mb-1">Limited Offer</p>
+                <h2 className="text-3xl font-black text-white">20% OFF</h2>
+                <p className="mt-1 text-xs text-white/80 font-medium">On all website plans</p>
               </div>
 
               {/* Body */}
-              <div className="px-6 py-5 text-center">
-                <p className="text-body-color dark:text-gray-400 text-xs leading-relaxed mb-4">
+              <div className="px-6 py-4 text-center">
+                <p className="text-body-color dark:text-gray-400 text-[11px] leading-relaxed mb-4">
                   Book your project this week and save 20%. Limited slots available.
                 </p>
 
                 <button
                   onClick={handleClaim}
-                  className="inline-flex items-center gap-1.5 w-full justify-center rounded-xl bg-primary py-3 text-sm font-bold text-white hover:bg-primary/90 transition-colors"
+                  className="inline-flex items-center gap-1.5 w-full justify-center rounded-xl bg-primary py-2.5 text-xs font-bold text-white hover:bg-primary/90 transition-colors"
                 >
-                  View Plans <ArrowRight className="h-3.5 w-3.5" />
-                </button>
-
-                <button onClick={close} className="mt-3 text-xs text-gray-400 hover:text-gray-500 transition-colors">
-                  No thanks
+                  Claim Discount <ArrowRight className="h-3 w-3" />
                 </button>
               </div>
             </div>

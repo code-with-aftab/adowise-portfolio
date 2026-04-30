@@ -12,11 +12,12 @@
         "blog": "Blog",
         "pricing": "Pricing",
         "support": "Support",
+        "careers": "Careers",
         "trends": "Trends",
         "demo": "Book a free Demo"
     },
     "Features": {
-        "title": "Main Features",
+        "title": "Our Services",
         "subtitle": "Discover what makes Adowise the top choice for global enterprises.",
         "feature1_title": "Web Development",
         "feature1_desc": "High-performance React & Next.js websites tailored for scale.",
@@ -26,8 +27,8 @@
         "feature3_desc": "From authentication to dashboards, roles, and APIs — we develop complete SaaS products powered by Next.js."
     },
     "About": {
-        "title": "Adowise: The Ultimate SaaS & Business Solution",
-        "paragraph": "Adowise is designed to help startups, SaaS companies, and businesses deliver high-quality products with speed and efficiency. Everything you need to build and scale your online platform is included, backed by modern technology and developer-friendly tools.",
+        "title": "About Adowise",
+        "paragraph": "Adowise is designed to help startups, SaaS companies, and businesses deliver high-quality digital products with speed and efficiency. We specialize in building scalable web platforms and AI-driven solutions tailored for growth.",
         "list1": "Optimized for startups and SaaS",
         "list2": "Built with React & Next.js",
         "list3": "Responsive and retina-ready",
@@ -36,12 +37,12 @@
         "list6": "Highly customizable and modular"
     },
     "Blog": {
-        "title": "Latest Trends & Insights",
-        "subtitle": "Stay updated with the latest in Agentic AI, Sora, SpaceX Starship, and more."
+        "title": "Adowise Blog",
+        "subtitle": "Adowise shares the latest insights in Agentic AI, SaaS development, and global digital innovation to keep your business ahead of the curve."
     },
     "Pricing": {
-        "title": "Transparent Pricing Plans",
-        "subtitle": "Choose the best plan to scale your business.",
+        "title": "Pricing Plans",
+        "subtitle": "Adowise offers transparent pricing plans for startups and local businesses. Choose the best plan to scale your digital presence.",
         "basic_name": "Basic Website Plan",
         "basic_desc": "Up to 5 pages for startups and local businesses.",
         "business_name": "Business Website Plan",
@@ -54,8 +55,8 @@
         "delivery": "Delivery"
     },
     "Contact": {
-        "title": "Need Help? Open a Ticket",
-        "subtitle": "Our support team will get back to you ASAP via email.",
+        "title": "Contact Us",
+        "subtitle": "At Adowise, we provide 24/7 premium support. Our team will get back to you ASAP via email to resolve any technical issues.",
         "name_label": "Your Name",
         "name_placeholder": "Enter your name",
         "email_label": "Your Email",
@@ -117,7 +118,7 @@
     },
     "Footer": {
         "brand_desc": "Building modern digital experiences with high-quality design, clean code, and meaningful user experiences.",
-        "services": "Services",
+        "services": "Our Services",
         "quick_links": "Quick Links",
         "contact": "Contact",
         "rights": "All rights reserved."
@@ -155,5 +156,28 @@
         "opt_out_desc": "Users may opt out of personalized advertising by visiting Ads Settings.",
         "contact_title": "Contact Us",
         "contact_desc": "If you have questions about this policy, contact us at adowise.info@gmail.com"
+    },
+    "Careers": {
+        "title": "Join Our Team",
+        "subtitle": "At Adowise, we believe in fostering a dynamic and inclusive work environment where innovation thrives and careers flourish.",
+        "apply_now": "Apply Now",
+        "opportunities_title": "Current Opportunities",
+        "opportunities_subtitle": "Discover your next career move with us and join our dynamic team.",
+        "no_jobs": "Unable to load job openings",
+        "check_back": "Please check back later or contact us directly.",
+        "try_again": "Try Again",
+        "why_title": "Why Work With Us",
+        "why_subtitle": "We are always on the lookout for talented individuals who are passionate about technology and eager to make a difference.",
+        "benefit1_title": "What You’ll Do",
+        "benefit1_desc": "At Adowise, no two days are the same. You'll collaborate with brilliant minds on various projects, developing innovative solutions and exploring new frontiers in tech. Every member is part of the ideation process.",
+        "benefit2_title": "Your Growth Journey",
+        "benefit2_desc": "We’re committed to your leadership journey. At Adowise, you’ll build a versatile skill set, from product development to technical mastery. We cultivate well-rounded leaders ready for the next big challenge.",
+        "benefit3_title": "Why You’ll Love It Here",
+        "benefit3_desc": "We prioritize your personal and professional growth. You'll gain access to a rich network of experts, cutting-edge tools, and an environment where collaboration is essential. Plus, we foster flexibility and work-life balance.",
+        "benefit4_title": "Who We’re Looking For",
+        "benefit4_desc": "We seek problem solvers who think outside the box. Expertise in your function is just the beginning—it's your ability to stretch your thinking and approach new challenges that excites us.",
+        "cta_title": "Come join us",
+        "cta_subtitle": "Ready to take the next step in your career? Apply Now",
+        "cta_btn": "Let's Go"
     }
 }
