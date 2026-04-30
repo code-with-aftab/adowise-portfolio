@@ -8,6 +8,8 @@ import Footer from "@/components/Footer";
 import { Providers } from "./providers";
 import VisitorLogger from "@/components/VisitorLogger";
 import NotificationPopup from "@/components/NotificationPopup";
+import AdPopup from "@/components/Blog/AdPopup";
+import InterstitialAd from "@/components/Blog/InterstitialAd";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,6 +40,8 @@ export default function ClientLayout({
                             {children}
                             <Footer lang={lang} messages={messages} />
                             <NotificationPopup />
+                            <AdPopup />
+                            <InterstitialAd />
                         </div>
                     )}
                 </LenisProvider>

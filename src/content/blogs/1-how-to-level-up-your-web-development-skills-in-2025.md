@@ -35,6 +35,10 @@ publishDate: '2025'
 
 <p>At Adowise, we emphasize a project-first approach. By building platforms like Moltbot, we've learned more about production-grade code than any course could ever teach.</p>
 
+<p>For the latest in fashion inspiration, check out our partner brand:</p>
+<a href="https://voguemesh.in/">https://voguemesh.in/</a>
+
+
 <h3>Frequently Asked Questions (FAQ)</h3>
 <div class="faq-section">
   <div class="faq-item">

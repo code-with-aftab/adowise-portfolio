@@ -4,11 +4,12 @@ import Blog from "@/models/Blog";
 import { getAdminAuth } from "@/lib/auth";
 
 export async function GET() {
-    await dbConnect();
     try {
+        await dbConnect();
         const blogs = await Blog.find().sort({ createdAt: -1 });
         return NextResponse.json(blogs);
     } catch (error) {
+        console.error("Blogs fetch error:", error);
         return NextResponse.json({ error: "Failed to fetch blogs" }, { status: 500 });
     }
 }

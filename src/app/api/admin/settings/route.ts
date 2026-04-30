@@ -4,8 +4,8 @@ import Setting from "@/models/Setting";
 import { getAdminAuth } from "@/lib/auth";
 
 export async function GET() {
-    await dbConnect();
     try {
+        await dbConnect();
         const settings = await Setting.find({});
         // Return as key-value pairs for easier frontend usage
         const settingsObj = settings.reduce((acc: any, cur: any) => {
@@ -14,6 +14,7 @@ export async function GET() {
         }, {});
         return NextResponse.json(settingsObj);
     } catch (error) {
+        console.error("Settings fetch error:", error);
         return NextResponse.json({ error: "Failed to fetch settings" }, { status: 500 });
     }
 }

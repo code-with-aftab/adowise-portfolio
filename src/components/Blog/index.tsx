@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import SectionTitle from "../Common/SectionTitle";
 import SingleBlog from "./SingleBlog";
+import AdCard from "./AdCard";
 
 const Blog = ({ messages, initialBlogs = [], limit }: { messages: any, initialBlogs?: any[], limit?: number }) => {
   const [blogs, setBlogs] = useState<any[]>(initialBlogs);
@@ -43,11 +44,22 @@ const Blog = ({ messages, initialBlogs = [], limit }: { messages: any, initialBl
         />
 
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-3">
-          {displayedBlogs.map((blog) => (
+          {displayedBlogs.map((blog, index) => (
             <div key={blog._id || blog.id} className="w-full">
               <SingleBlog blog={blog} />
+              {/* Inject Ad after 2nd blog (index 1) */}
+              {index === 1 && (
+                <div className="col-span-full md:hidden">
+                  <AdCard url="https://voguemesh.in/" />
+                </div>
+              )}
             </div>
           ))}
+        </div>
+        
+        {/* For larger screens, show ad as a wide banner if needed, or just after the first row */}
+        <div className="hidden md:block">
+           {displayedBlogs.length > 2 && <AdCard url="https://voguemesh.in/" />}
         </div>
       </div>
     </section>
